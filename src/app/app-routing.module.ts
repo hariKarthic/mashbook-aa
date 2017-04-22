@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from './components/landing/landing.component';
 import {CameraviewComponent} from './components/cameraview/cameraview.component';
 import {GalleryviewComponent} from './components/galleryview/galleryview.component';
+import {PhotoviewComponent} from './components/photoview/photoview.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'gallery', component: GalleryviewComponent
+  },
+  {
+    path: 'gallery/scrap/:id', component: PhotoviewComponent
   }
 ];
 

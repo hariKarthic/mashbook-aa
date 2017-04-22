@@ -16,6 +16,7 @@ import { CameraviewComponent } from './components/cameraview/cameraview.componen
 import { GalleryviewComponent } from './components/galleryview/galleryview.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -39,7 +40,8 @@ const myFirebaseAuthConfig = {
     LandingComponent,
     HeaderComponent,
     CameraviewComponent,
-    GalleryviewComponent
+    GalleryviewComponent,
+    PhotoviewComponent
   ],
   imports: [
     BrowserModule,

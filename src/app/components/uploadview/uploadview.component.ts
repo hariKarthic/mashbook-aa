@@ -48,6 +48,7 @@ export class UploadviewComponent implements OnInit {
     "walden",
     "willow",
     "xpro2"];
+    
   	constructor(private router: Router, private pp: PassUploadedDataService, private sanitizer:DomSanitizer, private Utils: UtilsService, private Storage: StorageService) {
 
   	}

@@ -1,0 +1,41 @@
+.sb-landing {
+  width: 100%;
+  height: auto;
+}
+
+.sb-landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-attachment: fixed;
+  background-image: url('http://lorempixel.com/1200/900/people/');
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(1);
+}
+
+.sb-landing_polaroid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 380px;
+  height: 380px;
+  border: 15px solid #fff;
+  border-bottom: 60px solid #fff;
+  box-shadow: 3px 3px 3px #777;
+  background-image: url('http://lorempixel.com/1200/900/people/');
+  background-size: cover;
+  background-color: #fff;
+
+}
+
+.sb-landing_msg {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}

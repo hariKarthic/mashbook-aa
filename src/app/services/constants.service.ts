@@ -8,7 +8,6 @@ import { Injectable, Inject } from '@angular/core';
 
 @Injectable()
 export class Constants {
-
-	cards : "cards"
+	cards:string = "cards";
 }
 

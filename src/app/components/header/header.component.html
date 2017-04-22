@@ -11,8 +11,8 @@
     <!--<a md-icon-button routerLink="/uploadpic">
          <md-icon class="sb-header__icon">file_upload</md-icon>
       </a>-->
-      <label md-icon-button for="uploadPhotoHeader">
-         <md-icon class="sb-header__icon">file_upload</md-icon>
+      <label md-icon-button for="uploadPhotoHeader" class="mat-icon-button">
+         <span class="mat-button-wrapper"><md-icon class="sb-header__icon">file_upload</md-icon></span>
       </label>
       <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader" (change)="onFileUpload($event)">
   </span>

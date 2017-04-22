@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 
 import GlobalConfig from "./../../services/globalConfig.service";
-
+import { slideInDownAnimation } from "../../app-transition.module";
 
 @Component({
   selector: 'sb-header',
@@ -12,12 +12,13 @@ import GlobalConfig from "./../../services/globalConfig.service";
 })
 export class HeaderComponent implements OnInit {
 
-  showHeader:boolean=true;
+  showHeader: boolean = true;
+  @HostBinding('@routeAnimation') routeAnimation = true;
 
   constructor(
     private router: Router,
-    private pp:PassUploadedDataService,
-    private globalConfig:GlobalConfig
+    private pp: PassUploadedDataService,
+    private globalConfig: GlobalConfig
   ) { }
 
   ngOnInit() {

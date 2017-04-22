@@ -1,25 +1,16 @@
 import { animate, AnimationEntryMetadata, state, style, transition, trigger } from '@angular/core';
 
 // Component transition animations
-export const slideInDownAnimation: AnimationEntryMetadata =
-  trigger('slideInDownAnimation', [
-    // state('*',
-    //   style({
-    //     opacity: 1,
-    //     transform: 'translateX(0)'
-    //   })
-    // ),
-    transition(':enter', [
+export const fadeInAnimation: AnimationEntryMetadata =
+  trigger('routeAnimation', [
+    state('*',
       style({
-        opacity: 0,
-        transform: 'translateX(-100%)'
-      }),
-      animate('0.2s ease-in')
-    ]),
+        opacity: 1
+      })
+    ),
     transition(':leave', [
-      animate('0.5s ease-out', style({
-        opacity: 0,
-        transform: 'translateY(100%)'
+      animate('.5s', style({
+        opacity: 0
       }))
     ])
   ]);

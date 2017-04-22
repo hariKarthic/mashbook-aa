@@ -7,9 +7,9 @@ var cors = require('cors');
 var axios = require("axios");
 var schedule = require('node-schedule');
 
-var notifications = require("./notifications.js");
+var notifications = require("./notification.js");
 
-app = express();
+var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); //for reading urlencoded params

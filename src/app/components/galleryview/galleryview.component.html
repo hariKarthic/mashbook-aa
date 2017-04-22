@@ -8,11 +8,14 @@
 <ng-template #noPhotos>
   <div class="row">
     <div class="col-xs-12">
-      <h1>Some message to show there is no photos</h1>
-      <button md-raised-button routerLink="/camera-ui">
+      <h1>
+        <md-icon>sentiment_dissatisfied</md-icon>
+        Some message to show there is no photos
+      </h1>
+      <button md-raised-button routerLink="/camera">
         Camera
       </button>
-      <button md-raised-button routerLink="/choose-photo">
+      <button md-raised-button routerLink="/gallery">
         Upload
       </button>
     </div>

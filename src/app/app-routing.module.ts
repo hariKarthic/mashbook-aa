@@ -10,7 +10,8 @@ import {UploadviewComponent} from './components/uploadview/uploadview.component'
 const routes: Routes = [
   {
     path: '',
-    children: []
+    pathMatch: "full",
+    redirectTo: "/landing"
   },
   {
     path: 'landing', component: LandingComponent

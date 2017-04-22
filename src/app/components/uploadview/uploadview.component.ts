@@ -20,6 +20,7 @@ export class UploadviewComponent implements OnInit {
 	previewImage:any = null;
 	caption:string = null;
 	selectedFilter:string = null;
+	activeViewContainer: String = "photoTaken";
 	// Filters
 	cssfilters: string[] = [
     "_1977",
@@ -48,8 +49,12 @@ export class UploadviewComponent implements OnInit {
     "walden",
     "willow",
     "xpro2"];
-    
-  	constructor(private router: Router, private pp: PassUploadedDataService, private sanitizer:DomSanitizer, private Utils: UtilsService, private Storage: StorageService) {
+
+  	constructor(private router: Router, 
+  		private pp: PassUploadedDataService, 
+  		private sanitizer:DomSanitizer, 
+  		private Utils: UtilsService, 
+  		private Storage: StorageService) {
 
   	}
 
@@ -60,6 +65,30 @@ export class UploadviewComponent implements OnInit {
 
   	sanitize(url: string) {
 	    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+	}
+
+	/**
+     * Shows text area when captured photo is deemed ok
+     * @param event
+     */
+	acceptCapture(event) {
+	    console.log("Photo Accepted!!");
+	    this.activeViewContainer = "showTextArea";
+	    // this.showTextArea = true;
+	    // this.storeData();
+	}
+
+	/**
+     * Shows back the camera icon if photo is not ok
+     * @param event
+     */
+	rejectCapture(event) {
+	    console.log("**RETAKE***");
+
+	    // this.activeViewContainer = "cameraStage";
+	    // this.isPhotoTaken = false;
+	    // this.showTextArea = false;
+	    // this.startCamera();
 	}
 
 	/**
@@ -75,7 +104,7 @@ export class UploadviewComponent implements OnInit {
    	 *@desc Stored data in indexed db
      *@param event
      **/
-  	acceptUpload(event) {
+  	storeData(event) {
   		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.previewImage, this.selectedFilter);
   		this.Storage.getData('cards').then((val: any) => {
 	      	if (!val) { val = [] };

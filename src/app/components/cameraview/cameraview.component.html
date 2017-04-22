@@ -10,66 +10,6 @@
           </div>
         </div>
       </ng-container>
-
-      <ng-container *ngSwitchCase="'photoTaken'" class="">
-        <div class="container">
-
-          <div class="pj-camera-picture-wrap">
-
-            <figure #capturedImageContainer ngClass="captured-image-container mirrorPhoto {{selectedFilter}}">
-              <img [src]="capturedImage" alt="filterimage" ngClass="camera-skin-snapshot">
-            </figure>
-
-            <div class="filtersPreviewContainer">
-              <div id="filtersPreview">
-                <figure *ngFor="let c of cssfilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
-                  <img [src]="capturedImage" alt="filterimage">
-                </figure>
-              </div>
-            </div>
-
-            <div class="pj-camera_button-container">
-              <button md-raised-button class="" id="reject-photo" (click)="rejectCapture($event)">
-                Cancel
-              </button>
-              <button md-raised-button class="" id="accept-photo" (click)="acceptCapture($event)">
-                Next
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </ng-container>
-
-      <ng-container *ngSwitchCase="'showTextArea'">
-        <div class="container">
-          <section class=" col-xs-12 pj-camera__comments ">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <img crossOrigin="Anonymous" #capturedImageHolder src="{{capturedImage}}" ngClass="{{selectedFilter}}" alt="takenimage" class="col-xs-12 mirrorPhoto" />
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea col-xs-12" [(ngModel)]='photoComments' rows="10"
-                          cols="50"></textarea>
-
-                <div class="pj-camera_button-container">
-                  <button md-raised-button class="" (click)="rejectCapture($event)">Cancel</button>
-                  <button md-raised-button class="" (click)="storeData($event)">Next</button>
-                </div>
-
-              </div>
-
-            </div>
-          </section>
-        </div>
-      </ng-container>
-
-      <ng-container *ngSwitchCase="'cameraError'">
-        <section>
-          You have chosen to block the camera. Please change the permission under Browser's settings. Or You may use the upload images.
-        </section>
-      </ng-container>
-
     </ng-container>
   </div>
 </div>

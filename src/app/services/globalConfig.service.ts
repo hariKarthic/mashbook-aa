@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 
 @Injectable()
-export class GlobalConfig{
+export default class GlobalConfig{
   navchange: EventEmitter<number> = new EventEmitter();
   constructor() {
 
@@ -15,5 +15,3 @@ export class GlobalConfig{
   }
 
 }
-
-export default GlobalConfig;

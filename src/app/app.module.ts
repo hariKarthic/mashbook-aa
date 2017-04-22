@@ -7,6 +7,7 @@ import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import {MdToolbarModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
+import {MdButtonModule} from '@angular/material';
 
 
 import {AppComponent} from './app.component';
@@ -14,6 +15,7 @@ import {LandingComponent} from './components/landing/landing.component';
 import {HeaderComponent} from './components/header/header.component';
 import { CameraviewComponent } from './components/cameraview/cameraview.component';
 import { GalleryviewComponent } from './components/galleryview/galleryview.component';
+import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { GalleryviewComponent } from './components/galleryview/galleryview.compo
     LandingComponent,
     HeaderComponent,
     CameraviewComponent,
-    GalleryviewComponent
+    GalleryviewComponent,
+    PhotoviewComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { GalleryviewComponent } from './components/galleryview/galleryview.compo
     HttpModule,
     AppRoutingModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

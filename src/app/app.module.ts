@@ -1,18 +1,18 @@
 import 'hammerjs';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import {AppRoutingModule} from './app-routing.module';
-import {MdToolbarModule} from '@angular/material';
-import {MdIconModule} from '@angular/material';
-import {MdButtonModule} from '@angular/material';
+import { AppRoutingModule } from './app-routing.module';
+import { MdToolbarModule } from '@angular/material';
+import { MdIconModule } from '@angular/material';
+import { MdButtonModule } from '@angular/material';
 
-import {AppComponent} from './app.component';
-import {LandingComponent} from './components/landing/landing.component';
-import {HeaderComponent} from './components/header/header.component';
+import { AppComponent } from './app.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { HeaderComponent } from './components/header/header.component';
 import { CameraviewComponent } from './components/cameraview/cameraview.component';
 import { GalleryviewComponent } from './components/galleryview/galleryview.component';
 import { PhotoviewComponent } from './components/photoview/photoview.component';
@@ -49,7 +49,7 @@ const myFirebaseAuthConfig = {
     GalleryviewComponent,
     PhotoviewComponent,
     PhotoitemComponent,
-	  UploadviewComponent
+    UploadviewComponent
   ],
   imports: [
     BrowserModule,
@@ -65,4 +65,4 @@ const myFirebaseAuthConfig = {
   providers: [PassUploadedDataService, GlobalConfig],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

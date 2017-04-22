@@ -10,6 +10,36 @@ import { PassUploadedDataService } from '../../services/pass-uploaded-data.servi
 })
 export class UploadviewComponent implements OnInit {
 
+  previewImage: any;
+  selectedFilter: string = "none";
+  cssfilters: string[] = [
+    "_1977",
+    "aden",
+    "brannan",
+    "brooklyn",
+    "clarendon",
+    "earlybird",
+    "gingham",
+    "hudson",
+    "inkwell",
+    "kelvin",
+    "lark",
+    "lofi",
+    "maven",
+    "mayfair",
+    "moon",
+    "nashville",
+    "perpetua",
+    "reyes",
+    "rise",
+    "slumber",
+    "stinson",
+    "toaster",
+    "valencia",
+    "walden",
+    "willow",
+    "xpro2"];
+
   constructor(router: Router, private pp: PassUploadedDataService) {
 
   }

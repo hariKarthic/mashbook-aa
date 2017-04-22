@@ -17,9 +17,10 @@ import { GalleryviewComponent } from './components/galleryview/galleryview.compo
 import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { PhotoitemComponent } from './components/photoitem/photoitem.component';
 import { UploadviewComponent } from './components/uploadview/uploadview.component';
-
 import { PassUploadedDataService } from './services/pass-uploaded-data.service';
+
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -45,7 +46,8 @@ const myFirebaseAuthConfig = {
     CameraviewComponent,
     GalleryviewComponent,
     PhotoviewComponent,
-	UploadviewComponent
+    PhotoitemComponent,
+	  UploadviewComponent
   ],
   imports: [
     BrowserModule,

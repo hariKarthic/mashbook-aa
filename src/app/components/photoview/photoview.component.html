@@ -1,3 +1,18 @@
-<div class="sb-gallery_item">
-  <img [src]="card" alt="title" />
-</div>
+<div class="row" *ngIf="(cardDetail.id && dataFound); else noCard  ">
+	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+		<img [src]="cardDetail.src" />
+	</div>
+	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+		<p>{{cardDetail.caption}}</p>
+		<span>{{cardDetail.createdAt | date: 'medium'}}</span>
+	</div>
+		
+	</div>
+<ng-template #noCard>
+	<h2>
+		No Scrap Found :|
+	</h2>
+	<div class="col-xs-12">
+		<button color="primary" md-raised-button routerLink="/camera">Create Scrap</button>
+	</div>
+</ng-template>

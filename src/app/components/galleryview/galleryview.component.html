@@ -1,3 +1,22 @@
-<p>
-  galleryview works!
-</p>
+<ng-container *ngIf="cards?.length>0;else noPhotos">
+  <div class="sb-gallery_grid" #grid>
+    <div class="sb-gallery_sizer"></div>
+    <sb-photoview *ngFor="let card of cards;let i=index" [card]="card"></sb-photoview>
+  </div>
+</ng-container>
+
+<ng-template #noPhotos>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Some message to show there is no photos</h1>
+      <button md-raised-button routerLink="/camera-ui">
+        Camera
+      </button>
+      <button md-raised-button routerLink="/choose-photo">
+        Upload
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+

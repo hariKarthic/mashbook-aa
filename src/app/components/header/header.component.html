@@ -8,8 +8,12 @@
     <a md-icon-button routerLink="/camera">
          <md-icon class="sb-header__icon">photo_camera</md-icon>
       </a>
-    <a md-icon-button routerLink="/uploadpic">
+    <!--<a md-icon-button routerLink="/uploadpic">
          <md-icon class="sb-header__icon">file_upload</md-icon>
-      </a>
+      </a>-->
+      <label md-icon-button for="uploadPhotoHeader">
+         <md-icon class="sb-header__icon">file_upload</md-icon>
+      </label>
+      <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader" (change)="onFileUpload($event)">
   </span>
 </md-toolbar>

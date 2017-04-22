@@ -1,0 +1,13 @@
+<div class="col-xs-12 col-sm-6">
+  <div class="sb-upload__image">
+    <div class="sb-upload__imagewrap">
+      <img #previewImageHolder [src]="previewImage" ngClass="{{selectedFilter}}" alt="preview" /></div>
+  </div>
+  <div class="sb-upload__filterframe">
+    <div id="filtersPreview">
+      <figure *ngFor="let c of cssfilters" ngClass="sb-upload__filters {{c}}" (click)="changeFilter(c)">
+        <img [src]="previewImage" alt="filterimage">
+      </figure>
+    </div>
+  </div>
+</div>

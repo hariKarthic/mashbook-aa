@@ -4,7 +4,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-
 import {AppRoutingModule} from './app-routing.module';
 import {MdToolbarModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
@@ -28,7 +27,7 @@ import {IsMobileService} from  "./services/ismobile.service";
 
 
 // Initialize Firebase
-var myFirebaseConfig = {
+let myFirebaseConfig = {
   apiKey: "AIzaSyBJ7cMU9QFd53uzhv3xBmaXXFw7wT4PB24",
   authDomain: "scrapbook-29ef5.firebaseapp.com",
   databaseURL: "https://scrapbook-29ef5.firebaseio.com",

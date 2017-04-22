@@ -1,5 +1,7 @@
 var axios = require("axios");
 
+var msg = [];
+
 exports.subscribe = function (server_key, registration_token, notification_topic) {
     return axios({
         url: "https://iid.googleapis.com/iid/v1/"+registration_token+"/rel/topics/"+notification_topic,
@@ -22,9 +24,9 @@ exports.publish = function (server_key, notificationTopic) {
         data:{
             "notification": {
                 "title": "Scrapbook",
-                "body": "Take some time out to take a selfie",
-                "icon": "./assets/journal-icon.png",
-                "click_action": "http://localhost:4200/gallery"
+                "body": "Hey, How are you today?",
+                "icon": "./favicon.png",
+                "click_action": "https://scrapbook-29ef5.firebaseapp.com"
             },
             "to": "/topics/"+notificationTopic
         }

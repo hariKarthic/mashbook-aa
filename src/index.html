@@ -5,30 +5,41 @@
   <meta charset="utf-8">
   <title>Scrapbook</title>
   <base href="/">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="../node_modules/@angular/material/prebuilt-themes/purple-green.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+  <link href="./assets/styles/bootstrap.css" rel="stylesheet"/>
+
+
 </head>
 
 <body>
-  <sb-root>Loading...</sb-root>
+<sb-root>
+  <section class="container-fluid">
+    <h1 class="text-center">Loading...</h1>
+  </section>
+</sb-root>
 
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator
-          .serviceWorker
-          .register('sb-sw.js')
-          .then(function (registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }).catch(function (err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
-          });
+<script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator
+        .serviceWorker
+        .register('sb-sw.js')
+        .then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function (err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
       });
-    }
-  </script>
+    });
+  }
+</script>
 
 </body>
 

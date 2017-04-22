@@ -28,34 +28,6 @@ export class CameraviewComponent implements OnInit {
   videoTracks: any;
   activeViewContainer: String = "cameraStage";
 
-  cssfilters: string[] = [
-    "_1977",
-    "aden",
-    "brannan",
-    "brooklyn",
-    "clarendon",
-    "earlybird",
-    "gingham",
-    "hudson",
-    "inkwell",
-    "kelvin",
-    "lark",
-    "lofi",
-    "maven",
-    "mayfair",
-    "moon",
-    "nashville",
-    "perpetua",
-    "reyes",
-    "rise",
-    "slumber",
-    "stinson",
-    "toaster",
-    "valencia",
-    "walden",
-    "willow",
-    "xpro2"];
-
   constructor(
     private StorageService: StorageService,
     private router: Router,
@@ -82,7 +54,6 @@ export class CameraviewComponent implements OnInit {
   handleSuccess(stream) {
     this.cameraSkinStage.nativeElement.srcObject = stream;
     this.videoTracks = stream.getVideoTracks();
-    console.log("VideoTracks", this.videoTracks);
   }
 
   handleError(err) {
@@ -114,64 +85,9 @@ export class CameraviewComponent implements OnInit {
 
     this.capturedImage = this.convertCanvasToImage(snapshotCanvas);
     this.stopCapture();
-    this.pp.setData(this.capturedImage);
+    this.pp.setData({"url":this.capturedImage, "action": "camera"});
     this.router.navigate(['/upload']);
-    // this.globalConfig.emitDisplayHeaderEvent(true);
-  }
-
-  /**
-   * Shows text area when captured photo is deemed ok
-   * @param event
-   */
-  acceptCapture(event) {
-    console.log("Photo Accepted!!");
-    this.activeViewContainer = "showTextArea";
-    // this.showTextArea = true;
-    // this.storeData();
-  }
-
-  /**
-   * Stores data to localforage
-   * TODO:Validation on textarea
-   *
-   */
-  storeData() {
-
-    let dataURL = this.capturedImage;
-    let commentText = this.commentText.nativeElement.value;
-
-    /*Creating local storage snippet*/
-    let data = {
-      'title': Date.now(),
-      'description': commentText,
-      'src': dataURL,
-      'selectedFilter': this.selectedFilter
-    };
-
-    /*TODO:Create unique user id based on login*/
-    this.StorageService.getData('cards').then((val: any) => {
-      if(!val){val=[]};
-      console.log("Data retrieved successsfulyy!", val);
-      this.StorageService.setData('cards', val.concat(data)).then((resp) => {
-        console.log("Data added successfully!!");
-        this.router.navigate(['/gallery']);
-      });
-    });
-
-  }
-
-
-  /**
-   * Shows back the camera icon if photo is not ok
-   * @param event
-   */
-  rejectCapture(event) {
-    console.log("**RETAKE***");
-
-    this.activeViewContainer = "cameraStage";
-    // this.isPhotoTaken = false;
-    // this.showTextArea = false;
-    this.startCamera();
+    this.globalConfig.emitDisplayHeaderEvent(true);
   }
 
   stopCapture() {

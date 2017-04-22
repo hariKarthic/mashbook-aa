@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 import { UtilsService } from '../../services/utils.service';
 import { StorageService } from '../../services/storage.service';
+import { Constants } from '../../services/constants.service';
 
 import { Card } from '../../models/card.model';
 
@@ -13,53 +14,30 @@ import { Card } from '../../models/card.model';
   templateUrl: './uploadview.component.html',
   styleUrls: ['./uploadview.component.scss'],
   providers: [StorageService,
-  UtilsService]
+  UtilsService,
+  Constants]
 })
 export class UploadviewComponent implements OnInit {
 
-	previewImage:any = null;
+	imageInfo:any={};
 	caption:string = null;
 	selectedFilter:string = null;
 	activeViewContainer: String = "photoTaken";
+  cssFilters:string[] = [];
 	// Filters
-	cssfilters: string[] = [
-    "_1977",
-    "aden",
-    "brannan",
-    "brooklyn",
-    "clarendon",
-    "earlybird",
-    "gingham",
-    "hudson",
-    "inkwell",
-    "kelvin",
-    "lark",
-    "lofi",
-    "maven",
-    "mayfair",
-    "moon",
-    "nashville",
-    "perpetua",
-    "reyes",
-    "rise",
-    "slumber",
-    "stinson",
-    "toaster",
-    "valencia",
-    "walden",
-    "willow",
-    "xpro2"];
 
   	constructor(private router: Router, 
   		private pp: PassUploadedDataService, 
   		private sanitizer:DomSanitizer, 
   		private Utils: UtilsService, 
-  		private Storage: StorageService) {
+  		private Storage: StorageService,
+      private Constants: Constants) {
+      this.cssFilters = this.Constants.cssfilters;
 
   	}
 
   	ngOnInit() {
-    	this.previewImage = this.pp.getData()//this.sanitize(this.pp.getData());
+    	this.imageInfo = this.pp.getData()//this.sanitize(this.pp.getData());
 
   	}
 
@@ -74,8 +52,6 @@ export class UploadviewComponent implements OnInit {
 	acceptCapture(event) {
 	    console.log("Photo Accepted!!");
 	    this.activeViewContainer = "showTextArea";
-	    // this.showTextArea = true;
-	    // this.storeData();
 	}
 
 	/**
@@ -83,12 +59,7 @@ export class UploadviewComponent implements OnInit {
      * @param event
      */
 	rejectCapture(event) {
-	    console.log("**RETAKE***");
-
-	    // this.activeViewContainer = "cameraStage";
-	    // this.isPhotoTaken = false;
-	    // this.showTextArea = false;
-	    // this.startCamera();
+      this.router.navigate(['/gallery']);
 	}
 
 	/**
@@ -105,7 +76,7 @@ export class UploadviewComponent implements OnInit {
      *@param event
      **/
   	storeData(event) {
-  		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.previewImage, this.selectedFilter);
+  		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.imageInfo.previewImage, this.selectedFilter);
   		this.Storage.getData('cards').then((val: any) => {
 	      	if (!val) { val = [] };
 	      	console.log("Data retrieved successsfulyy!", val);

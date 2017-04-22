@@ -17,8 +17,8 @@ export class PushNotificationService {
         return this.messaging.getToken();
       }).then((token) => {
         console.log("has persmission: ", token);
-        alert(token);
-      }).catch(err => { alert(err) });
+        // alert(token);
+      }).catch(err => { console.log(err) });
   }
 
 }

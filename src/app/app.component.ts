@@ -6,7 +6,7 @@ import { PushNotificationService } from './services/push-notification.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [PushNotificationService]
-});
+})
 export class AppComponent implements OnInit {
 
   title = 'sb works!';

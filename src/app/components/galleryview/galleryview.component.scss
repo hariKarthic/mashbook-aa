@@ -1,0 +1,30 @@
+.sb-gallery_grid {
+  background-color: #fff;
+  width: 100%;
+}
+
+.sb-gallery_grid::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sb-gallery_item {
+  float: left;
+}
+
+.sb-gallery_sizer, .sb-gallery_item {
+  width: 33.333%;
+
+}
+
+
+.sb-gallery_item{
+  margin-bottom:10px;
+}
+
+.sb-gallery_item img {
+  display: block;
+  width: 100%;
+}
+

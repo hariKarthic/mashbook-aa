@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 
-import GlobalConfig from "./../../services/globalConfig.service";
+import {GlobalConfig} from "./../../services/globalConfig.service";
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from "./../../services/storage.service";
-import GlobalConfig from './../../services/globalConfig.service';
+import {GlobalConfig} from './../../services/globalConfig.service';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 
 

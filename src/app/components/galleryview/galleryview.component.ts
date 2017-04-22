@@ -35,15 +35,15 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
 
     console.log(this.grid.nativeElement);
-    let photogrid = this.grid.nativeElement;
+    let photogrid = this.grid ? this.grid.nativeElement : "";
     /*Initialise Masonry*/
-
+    /*TODO:Do a null check on photogrid*/
     imagesLoaded(photogrid, function () {
       this.mason = new Masonry(photogrid, {
         itemSelector: ".sb-gallery_item",
         columnWidth: ".sb-gallery_sizer",
         percentPosition: true,
-        gutter:10
+        gutter: 10
       })
     }.bind(this))
 

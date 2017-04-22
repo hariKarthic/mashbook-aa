@@ -2,11 +2,13 @@ import { Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit } fr
 import { Router } from '@angular/router';
 import { StorageService } from "./../../services/storage.service";
 import {GlobalConfig} from './../../services/globalConfig.service';
+import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
+
 
 @Component({
   selector: 'sb-cameraview',
   templateUrl: './cameraview.component.html',
-  styleUrls: ['./cameraview.component.scss', './../../../assets/styles/cssgram.min.css'],
+  styleUrls: ['./cameraview.component.scss'],
   providers: [StorageService]
 })
 export class CameraviewComponent implements OnInit {
@@ -57,7 +59,8 @@ export class CameraviewComponent implements OnInit {
   constructor(
     private StorageService: StorageService,
     private router: Router,
-    private globalConfig:GlobalConfig
+    private globalConfig:GlobalConfig,
+    private pp:PassUploadedDataService,
   ) {
     router.events.subscribe((val) => {
       console.log(val);
@@ -111,8 +114,9 @@ export class CameraviewComponent implements OnInit {
 
     this.capturedImage = this.convertCanvasToImage(snapshotCanvas);
     this.stopCapture();
-
-    this.globalConfig.emitDisplayHeaderEvent(true);
+    this.pp.setData(this.capturedImage);
+    this.router.navigate(['/upload']);
+    // this.globalConfig.emitDisplayHeaderEvent(true);
   }
 
   /**

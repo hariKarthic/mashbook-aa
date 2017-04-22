@@ -6,7 +6,7 @@ import {GlobalConfig} from './../../services/globalConfig.service';
 @Component({
   selector: 'sb-cameraview',
   templateUrl: './cameraview.component.html',
-  styleUrls: ['./cameraview.component.scss'],
+  styleUrls: ['./cameraview.component.scss', './../../../assets/styles/cssgram.min.css'],
   providers: [StorageService]
 })
 export class CameraviewComponent implements OnInit {

@@ -7,6 +7,7 @@ import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import {MdToolbarModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
+import {MdButtonModule} from '@angular/material';
 
 
 import {AppComponent} from './app.component';
@@ -14,9 +15,9 @@ import {LandingComponent} from './components/landing/landing.component';
 import {HeaderComponent} from './components/header/header.component';
 import { CameraviewComponent } from './components/cameraview/cameraview.component';
 import { GalleryviewComponent } from './components/galleryview/galleryview.component';
+import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
-import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -50,7 +51,8 @@ const myFirebaseAuthConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

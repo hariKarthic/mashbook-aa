@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 yarn-error.log
 settings.json
+functions/node_modules

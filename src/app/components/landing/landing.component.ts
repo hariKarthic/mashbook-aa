@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'sb-landing',
@@ -7,12 +9,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  isLanding: boolean = true;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
+
+    /*navigate to gallery after 2 secs...*/
+
+    setTimeout(() => {
+
+      this.router.navigate(["/gallery"]);
+
+    },4000);
+
   }
 
 }

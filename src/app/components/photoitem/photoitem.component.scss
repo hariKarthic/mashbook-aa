@@ -1,0 +1,19 @@
+.sb-gallery_item {
+  width: 32.5%;
+}
+
+.sb-gallery_item {
+  float: left;
+}
+
+.sb-gallery_item img {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 577px) {
+  .sb-gallery_item {
+    width: 100%;
+  }
+
+}

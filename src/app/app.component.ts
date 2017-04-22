@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'sb-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sb works!';
+
+  public isLanding:boolean = false;
+
+ constructor(){
+
+
+ }
+
+
+
 }

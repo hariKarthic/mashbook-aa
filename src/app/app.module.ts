@@ -1,22 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import 'hammerjs';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {MdToolbarModule} from '@angular/material';
+import {MdIconModule} from '@angular/material';
+
+
+import {AppComponent} from './app.component';
+import {LandingComponent} from './components/landing/landing.component';
+import {HeaderComponent} from './components/header/header.component';
+import { CameraviewComponent } from './components/cameraview/cameraview.component';
+import { GalleryviewComponent } from './components/galleryview/galleryview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    HeaderComponent,
+    CameraviewComponent,
+    GalleryviewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdToolbarModule,
+    MdIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

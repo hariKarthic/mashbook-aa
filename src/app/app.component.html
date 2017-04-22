@@ -1,4 +1,8 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+
+<header *ngIf="!isLanding">
+  <sb-header></sb-header>
+</header>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+

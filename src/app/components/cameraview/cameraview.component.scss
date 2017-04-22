@@ -1,0 +1,96 @@
+.camera-container{
+  background: black;
+  height: 100vh;
+  width: 100vw;
+}
+.camera-skin {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.captured-image-container{
+  width: 40%;
+  margin: 0 auto;
+}
+.camera-skin-snapshot {
+  width:100%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.mirrorPhoto{
+  transform: scaleX(-1);
+}
+.camera-skin-stage {
+  @extend .mirrorPhoto;
+  width: 100vw;
+  height: 100vh;
+  margin:0 auto;
+
+}
+
+.camera-skin-btn {
+  cursor: pointer;
+  position: absolute;
+
+  z-index:100;
+  bottom:50px;
+  left:50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+
+}
+
+.filters-pane {
+  width: 180px;
+  display: inline-block;
+  margin: 0 4px;
+  img {
+    max-width: 100%;
+  }
+}
+
+#filtersPreview {
+
+  width: calc(188px * 26);
+}
+
+.filtersPreviewContainer {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+
+.pj-camera-picture-wrap{
+  position: relative;
+  margin-top: 30px;
+  height: calc(100% - 30px);
+}
+
+.pj-camera__comments{
+
+  margin-top: 30px;
+}
+
+.pj-camera_textarea{
+  margin:10px;
+  padding:5px;
+  color:#000;
+  border: 1px solid #c1c1c1;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 0;
+  -webkit-border: none;
+}
+.pj-camera_button-container{
+  text-align:center;
+  margin-top: 50px;
+  clear: both;
+}

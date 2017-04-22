@@ -2,13 +2,13 @@ import { animate, AnimationEntryMetadata, state, style, transition, trigger } fr
 
 // Component transition animations
 export const slideInDownAnimation: AnimationEntryMetadata =
-  trigger('routeAnimation', [
-    state('*',
-      style({
-        opacity: 1,
-        transform: 'translateX(0)'
-      })
-    ),
+  trigger('slideInDownAnimation', [
+    // state('*',
+    //   style({
+    //     opacity: 1,
+    //     transform: 'translateX(0)'
+    //   })
+    // ),
     transition(':enter', [
       style({
         opacity: 0,

@@ -43,7 +43,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
         itemSelector: ".sb-gallery_item",
         columnWidth: ".sb-gallery_sizer",
         percentPosition: true,
-        gutter: 10
+        gutter: 5
       })
     }.bind(this))
 

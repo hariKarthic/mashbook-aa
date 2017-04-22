@@ -9,7 +9,7 @@ import { PassUploadedDataService } from '../../services/pass-uploaded-data.servi
 })
 export class HeaderComponent implements OnInit {
   
-  constructor(private router: Router,private pp:PassUploadedDataService) { }
+  constructor(private router: Router,private passData:PassUploadedDataService) { }
 
   ngOnInit() {
   }
@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
       let reader = new FileReader();
       reader.onload = (e) => {
+        this.passData.setData(reader.result);
         this.router.navigate(['/upload']);
       }
       reader.readAsDataURL(inputElem.files[0]);

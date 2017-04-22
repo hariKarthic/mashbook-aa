@@ -9,7 +9,6 @@ import {MdToolbarModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
 import {MdButtonModule} from '@angular/material';
 
-
 import {AppComponent} from './app.component';
 import {LandingComponent} from './components/landing/landing.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -18,6 +17,9 @@ import { GalleryviewComponent } from './components/galleryview/galleryview.compo
 import { PhotoviewComponent } from './components/photoview/photoview.component';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { UploadviewComponent } from './components/uploadview/uploadview.component';
+
+import { PassUploadedDataService } from './services/pass-uploaded-data.service';
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -42,7 +44,8 @@ const myFirebaseAuthConfig = {
     HeaderComponent,
     CameraviewComponent,
     GalleryviewComponent,
-    PhotoviewComponent
+    PhotoviewComponent,
+	UploadviewComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +57,7 @@ const myFirebaseAuthConfig = {
     MdIconModule,
     MdButtonModule
   ],
-  providers: [],
+  providers: [PassUploadedDataService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

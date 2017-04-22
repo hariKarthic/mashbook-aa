@@ -21,6 +21,7 @@ import { PhotoitemComponent } from './components/photoitem/photoitem.component';
 import { UploadviewComponent } from './components/uploadview/uploadview.component';
 import { PassUploadedDataService } from './services/pass-uploaded-data.service';
 
+import GlobalConfig from './services/globalConfig.service';
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -59,7 +60,7 @@ const myFirebaseAuthConfig = {
     MdIconModule,
     MdButtonModule
   ],
-  providers: [PassUploadedDataService],
+  providers: [PassUploadedDataService, GlobalConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

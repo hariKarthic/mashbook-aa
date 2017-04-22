@@ -17,4 +17,10 @@
   width: 32.5%;
 }
 
+@media (max-width: 577px) {
+  .sb-gallery.m-xs {
+    margin: 0 auto;
+    padding: 0px;
+  }
+}
 

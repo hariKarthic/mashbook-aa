@@ -21,7 +21,7 @@ exports.publish = function (server_key, notificationTopic) {
         },
         data:{
             "notification": {
-                "title": "Photo Journal",
+                "title": "Scrapbook",
                 "body": "Take some time out to take a selfie",
                 "icon": "./assets/journal-icon.png",
                 "click_action": "http://localhost:4200/gallery"

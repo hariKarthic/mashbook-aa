@@ -25,6 +25,8 @@ var server_key = "AAAAt2EKL3U:APA91bHmiWZW71cQ1Th4sunczaC0I9KxwfD67suF_xElz3cHa2
 var notificationTopic = null;
 var jobId = null;
 
+
+
 /**
  * Call this API from clients to subscribe to notifications.
  */
@@ -85,6 +87,10 @@ function scheduleNotification() {
     notifications.publish(server_key, notificationTopic);
   });
 }
+
+app.get('/', function (req, res) {
+  res.send('Hello World! This is a Scrapbook backend code.')
+})
 
 var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;

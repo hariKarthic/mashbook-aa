@@ -86,7 +86,7 @@ export class CameraviewComponent implements OnInit {
 
     this.capturedImage = this.convertCanvasToImage(snapshotCanvas);
     this.stopCapture();
-    this.pp.setData({"url":this.capturedImage, "action": "camera"});
+    this.pp.setData({"previewImage":this.capturedImage, "action": "camera"});
     this.router.navigate(['/upload']);
     this.globalConfig.emitDisplayHeaderEvent(true);
   }

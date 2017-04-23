@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
 
       let reader = new FileReader();
       reader.onload = (e) => {
-        this.pp.setData({"url":reader.result, "action": "upload"});
+        this.pp.setData({"previewImage":reader.result, "action": "upload"});
         this.router.navigate(['/upload']);
       }
       reader.readAsDataURL(inputElem.files[0]);

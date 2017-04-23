@@ -51,7 +51,6 @@ export class UploadviewComponent implements OnInit {
      * @param event
      */
 	acceptCapture(event) {
-	    console.log("Photo Accepted!!");
 	    this.activeViewContainer = "showTextArea";
 	}
 
@@ -80,9 +79,7 @@ export class UploadviewComponent implements OnInit {
   		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.imageInfo.previewImage, this.selectedFilter);
   		this.Storage.getData('cards').then((val: any) => {
 	      	if (!val) { val = [] };
-	      	console.log("Data retrieved successsfulyy!", val);
 	      	this.Storage.setData('cards', val.concat(data)).then((resp) => {
-		        console.log("Data added suvvessfully!!");
 		        this.router.navigate(['/gallery']);
 	      	});
 	    });
@@ -93,6 +90,6 @@ export class UploadviewComponent implements OnInit {
    	 *@param event
    	 */
    	rejectUpload(event) {
-   		console.log(event);
+   		this.router.navigate(['/gallery']);
    	}
 }

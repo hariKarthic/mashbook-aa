@@ -8,7 +8,7 @@
                     </figure>
                     <div class="filtersPreviewContainer">
                         <div id="filtersPreview">
-                            <figure *ngFor="let c of cssfilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
+                            <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
                                 <img [src]="imageInfo.previewImage" alt="filterimage">
                             </figure>
                         </div>

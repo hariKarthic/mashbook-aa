@@ -1,7 +1,7 @@
-<div class="row">
+<div class="container">
     <ng-container [ngSwitch]="activeViewContainer">
         <ng-container *ngSwitchCase="'photoTaken'" class="">
-            <div class="container">
+            <div class="row">
                 <div class="pj-camera-picture-wrap">
                     <figure #capturedImageContainer ngClass="captured-image-container mirrorPhoto {{selectedFilter}}">
                         <img [src]="imageInfo.previewImage" alt="filterimage" ngClass="camera-skin-snapshot">

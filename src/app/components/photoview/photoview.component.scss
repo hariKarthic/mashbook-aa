@@ -1,11 +1,17 @@
-.sb-photoview_wrap{
-  border:10px solid #fff;
-  border-bottom:60px solid #fff;
-  box-shadow:2px 2px 2px #777;
+.sb-photoview {
+  min-height: 93vh;
+  background-image: url('../../../assets/linedpaper.png');
+  background-repeat: repeat;
 
 }
 
+.sb-photoview_wrap {
+  border: 10px solid #fff;
+  border-bottom: 60px solid #fff;
+  box-shadow: 2px 2px 2px #777;
 
-.sb-photoview-comments{
+}
+
+.sb-photoview-comments {
 
 }

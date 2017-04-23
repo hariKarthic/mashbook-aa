@@ -23,6 +23,7 @@ import { UploadviewComponent } from './components/uploadview/uploadview.componen
 import { PassUploadedDataService } from './services/pass-uploaded-data.service';
 
 import {GlobalConfig} from './services/globalConfig.service';
+import { Page404Component } from './components/page404/page404.component';
 
 // Initialize Firebase
 var myFirebaseConfig = {
@@ -49,7 +50,8 @@ const myFirebaseAuthConfig = {
     GalleryviewComponent,
     PhotoviewComponent,
     PhotoitemComponent,
-    UploadviewComponent
+    UploadviewComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

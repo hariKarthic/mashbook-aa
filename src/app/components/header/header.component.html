@@ -17,7 +17,7 @@
          <span class="mat-button-wrapper"><md-icon class="sb-header__icon">file_upload</md-icon></span>
       </label>
       <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader"
-             (change)="onFileUpload($event)">
+             (change)="onFileUpload($event)" #uploadPhoto>
   </span>
   </ng-container>
 </md-toolbar>

@@ -44,11 +44,7 @@ export class UploadviewComponent implements OnInit {
 
 	ngOnInit() {
 		this.imageInfo = this.pp.getData();
-		if(this.imageInfo && this.imageInfo.previewImage){
-			this.updateSrc(this.imageInfo.previewImage)
-		}else{
-			this.router.navigate(['/gallery']);
-		}
+		this.updateSrc(this.imageInfo.previewImage)
 	}
 
 	ngDoCheck() {

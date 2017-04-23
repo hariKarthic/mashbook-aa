@@ -1,22 +1,31 @@
 <section class="container-fluid">
 
-  <div class="row" *ngIf="(cardDetail.id && dataFound); else noCard  ">
+  <div class="row sb-photoview" *ngIf="(cardDetail.id && dataFound); else noCard  ">
     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
       <div class="sb-photoview_wrap {{cardDetail.selectedFilter}}">
         <img [src]="cardDetail.src"/></div>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 sb-photoview-comments">
-      <p>{{cardDetail.caption}}</p>
-      <span>{{cardDetail.createdAt | date: 'medium'}}</span>
+      <h2>You had written...</h2>
+      <div class="text-center" style="margin:20px 0">
+        <md-icon>format_quote</md-icon><p style="display:inline-block">{{cardDetail.caption}}</p> <md-icon>format_quote</md-icon>
+
+      </div>
+      <div>
+        on <h4>{{cardDetail.createdAt | date: 'medium'}}</h4>
+      </div>
+
     </div>
 
   </div>
   <ng-template #noCard>
+    <section class="sb-photoview">
     <h2>
       Nothing here !
     </h2>
     <div class="col-xs-12">
       <button color="primary" md-raised-button routerLink="/camera">Create Scrap</button>
     </div>
+    </section>
   </ng-template>
 </section>

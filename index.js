@@ -15,10 +15,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); //for reading urlencoded params
 app.use(cors());
 
-var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = new schedule.Range(0, 6);
-rule.hour = 21;
-rule.minute = 17;
 
 var server_key = "AAAAt2EKL3U:APA91bHmiWZW71cQ1Th4sunczaC0I9KxwfD67suF_xElz3cHa2UwGjgfR-RI78UhxmKockNsQFKteBTcfvjw4zXKf--6ZYc8isUI1bS1LDhvL4MVAWM2fKu9xhfe97JMuyPkKtDLfJ2c";
 

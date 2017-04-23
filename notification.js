@@ -41,14 +41,16 @@ exports.publish = function (server_key) {
         const hrDiff = hrUtc - hr;
         const minDiff = minUtc - min;
 
-        console.log(hr, min, hrUtc, minUtc, hrDiff, minDiff);
+        // console.log(hr, min, hrUtc, minUtc, hrDiff, minDiff);
 
         let possibleOffset = (hrDiff * 60) + minDiff;
         possibleOffset = possibleOffset - (possibleOffset % 30);
         return generateTopicWithOffset(possibleOffset);
     };
 
-    let notificationTopic = getTargetTopic("16:00");
+    let notificationTopic = getTargetTopic("17:30");
+    console.log('notificationTopic', notificationTopic);
+
 
     return axios({
         url: "https://fcm.googleapis.com/fcm/send",

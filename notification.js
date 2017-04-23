@@ -48,7 +48,7 @@ exports.publish = function (server_key) {
         return generateTopicWithOffset(possibleOffset);
     };
 
-    let notificationTopic = getTargetTopic("17:30");
+    let notificationTopic = getTargetTopic("16:31");
     console.log('notificationTopic', notificationTopic);
 
 

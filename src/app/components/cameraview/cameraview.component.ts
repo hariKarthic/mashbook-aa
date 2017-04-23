@@ -1,8 +1,8 @@
-import { Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { StorageService } from "./../../services/storage.service";
+import {Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {StorageService} from "./../../services/storage.service";
 import {GlobalConfig} from './../../services/globalConfig.service';
-import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
+import {PassUploadedDataService} from '../../services/pass-uploaded-data.service';
 
 
 @Component({
@@ -56,21 +56,20 @@ export class CameraviewComponent implements OnInit {
     "willow",
     "xpro2"];
 
-  constructor(
-    private StorageService: StorageService,
-    private router: Router,
-    private globalConfig:GlobalConfig,
-    private pp:PassUploadedDataService,
-  ) {
+  constructor(private StorageService: StorageService,
+              private router: Router,
+              private globalConfig: GlobalConfig,
+              private pp: PassUploadedDataService,) {
     router.events.subscribe((val) => {
       console.log(val);
       this.stopCapture();
     });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.globalConfig.emitDisplayHeaderEvent(false);
   }
+
   changeFilter(filter) {
     this.selectedFilter = filter;
   }
@@ -150,7 +149,10 @@ export class CameraviewComponent implements OnInit {
 
     /*TODO:Create unique user id based on login*/
     this.StorageService.getData('cards').then((val: any) => {
-      if(!val){val=[]};
+      if (!val) {
+        val = []
+      }
+      ;
       console.log("Data retrieved successsfulyy!", val);
       this.StorageService.setData('cards', val.concat(data)).then((resp) => {
         console.log("Data added successfully!!");
@@ -191,7 +193,7 @@ export class CameraviewComponent implements OnInit {
   startCamera() {
     navigator
       .mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({video: true})
       .then(this.handleSuccess.bind(this), this.handleError.bind(this));
   }
 

@@ -1,11 +1,11 @@
-<div class="marginTopBottom-20">
-  <ng-container *ngIf="!isLoading">
-    <ng-container *ngIf="cards?.length>0">
-      <div class="sb-gallery_grid" #grid>
-        <div class="sb-gallery_sizer"></div>
-        <sb-photoitem *ngFor="let card of cards;let i=index" [card]="card"></sb-photoitem>
-      </div>
-    </ng-container>
+
+<div class="container-fluid sb-gallery m-xs">
+  <ng-container *ngIf="cards?.length>0;else noPhotos">
+    <div class="sb-gallery_grid" #grid>
+      <div class="sb-gallery_sizer"></div>
+      <sb-photoitem *ngFor="let card of cards;let i=index" [card]="card"></sb-photoitem>
+    </div>
+  </ng-container>
 
 
     <ng-container *ngIf="cards?.length==0">
@@ -24,7 +24,7 @@
         </div>
       </div>
     </ng-container>
-  </ng-container>
+
 
 </div>
 

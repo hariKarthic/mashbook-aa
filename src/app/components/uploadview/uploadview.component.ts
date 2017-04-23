@@ -26,6 +26,7 @@ export class UploadviewComponent implements OnInit {
 	selectedFilter: string = null;
 	activeViewContainer: String = "photoTaken";
 	cssFilters: string[] = [];
+	blobUrl:any = null;
 	// Filters
 
 	constructor(private router: Router,
@@ -55,6 +56,7 @@ export class UploadviewComponent implements OnInit {
 		let cnvs = document.createElement('canvas');
 		cnvs.width = img.naturalWidth || img.width || 460;
 		cnvs.height = img.naturalHeight || img.height || 460;
+
 		let ctx = cnvs.getContext("2d").drawImage(img, 0, 0);
 		return cnvs;
 	}
@@ -78,8 +80,8 @@ export class UploadviewComponent implements OnInit {
 
 	async updateSrc(base64URL) {
 
-		let blobUrl:any = await this.createBlobUrl(base64URL);
-		this.imageInfo.previewImage = this.sanitize(blobUrl);
+		this.blobUrl = await this.createBlobUrl(base64URL);
+		this.blobUrl = this.sanitize(this.blobUrl);
 	}
 
 	ngOnInit() {
@@ -118,8 +120,8 @@ export class UploadviewComponent implements OnInit {
 	}
 
 	/**
-		 *@desc Stored data in indexed db
-	 *@param event
+	 * @desc Stored data in indexed db
+	 * @param event
 	 **/
 	storeData(event) {
 		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.imageInfo.previewImage, this.selectedFilter);
@@ -132,9 +134,9 @@ export class UploadviewComponent implements OnInit {
 	}
 
 	/**
-	 *@desc Rejects upload
-		 *@param event
-		 */
+	 * @desc Rejects upload
+	 * @param event
+	 */
 	rejectUpload(event) {
 		this.router.navigate(['/gallery']);
 	}

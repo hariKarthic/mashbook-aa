@@ -39,7 +39,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   getCards() {
     this.StorageService.getData(this.Constants.cards)
     .then((resp:any)=> {
-      if(!resp){  
+      if(resp && resp.length>0){
         this.cards = resp;
         this.loadMasonry();
         this.isLoading = false;

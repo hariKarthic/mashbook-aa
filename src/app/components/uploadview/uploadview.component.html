@@ -28,11 +28,13 @@
             <div class="container">
                 <section class=" col-xs-12 pj-camera__comments ">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6" ngClass="{{selectedFilter}}">
-                            <img crossOrigin="Anonymous" #capturedImageHolder src="{{imageInfo.previewImage}}" alt="takenimage" class="col-xs-12" />
+                        <div class="col-xs-12 col-sm-6 pj-takenimg-wrap" >
+                          <div ngClass="{{selectedFilter}}">
+                            <img crossOrigin="Anonymous" #capturedImageHolder src="{{imageInfo.previewImage}}" alt="takenimage" class="" />
+                          </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
-                            <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea col-xs-12" [(ngModel)]='caption' rows="10" cols="50"></textarea>
+                            <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea" [(ngModel)]='caption' rows="10" cols="50"></textarea>
                             <div class="pj-camera_button-container">
                                 <button md-raised-button color="accent" (click)="rejectCapture($event)"><md-icon>clear</md-icon>Cancel</button>
                                 <button md-raised-button color="accent" (click)="storeData($event)"><md-icon>done</md-icon>Save</button>

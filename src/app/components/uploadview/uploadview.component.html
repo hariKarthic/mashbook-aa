@@ -3,12 +3,12 @@
         <ng-container *ngSwitchCase="'photoTaken'" class="">
             <div class="row">
                 <div class="pj-camera-picture-wrap">
-                    <figure #capturedImageContainer ngClass="captured-image-container mirrorPhoto {{selectedFilter}}">
-                        <img [src]="blobUrl" alt="filterimage" ngClass="camera-skin-snapshot">
+                    <figure #capturedImageContainer class="captured-image-container {{selectedFilter}}">
+                        <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
                     </figure>
                     <div class="filtersPreviewContainer">
                         <div id="filtersPreview">
-                            <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
+                            <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
                                 <img [src]="blobUrl" alt="filterimage">
                             </figure>
                         </div>
@@ -28,7 +28,7 @@
             <div class="container">
                 <section class=" col-xs-12 pj-camera__comments ">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6" ngClass="{{selectedFilter}}">
+                        <div class="col-xs-12 col-sm-6 {{selectedFilter}}">
                             <img crossOrigin="Anonymous" #capturedImageHolder [src]="blobUrl" alt="takenimage" class="col-xs-12" />
                         </div>
                         <div class="col-xs-12 col-sm-6">

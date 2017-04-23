@@ -63,7 +63,7 @@ exports.publish = function (server_key) {
     // Add time in 24hrs format.
     let notificationTopic = getTargetTopic("21:30");
     console.log('notificationTopic', notificationTopic);
-    let message = getRandomIntInclusive(0, msg.length - 1);
+    let message = msg[getRandomIntInclusive(0, msg.length - 1)];
 
     return axios({
         url: "https://fcm.googleapis.com/fcm/send",

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="">
+  <div class="container">
     <ng-container [ngSwitch]="activeViewContainer">
 
       <ng-container *ngSwitchCase="'cameraStage'">
@@ -12,7 +12,23 @@
       </ng-container>
 
       <ng-container *ngSwitchCase="'cameraError'">
-        <p class="cameraError">Kindly grant access to your device camera!</p>
+        <div class="row">
+          <div class="col-xs-12 sb-gallery_moo">
+            <h1 class="text-center">
+              <span>Looks like camera is disabled!</span>
+            </h1>
+            <div class="sb-gallery__ph">
+
+              <label md-icon-button for="uploadPhotoHeader" class="mat-icon-button">
+                <span class="mat-button-wrapper">
+                  <md-icon color="accent" class="sb-header__icon uploadButton">file_upload</md-icon>
+                </span>
+              </label>
+              <input class="hidden" name="uploadPhotoHeader" type="file" id="uploadPhotoHeader"
+                     (change)="onFileUpload($event)">
+            </div>
+          </div>
+        </div>
       </ng-container>
     </ng-container>
   </div>

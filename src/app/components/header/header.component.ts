@@ -1,7 +1,7 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
-import {Router} from '@angular/router';
-import {PassUploadedDataService} from '../../services/pass-uploaded-data.service';
-import {IsMobileService} from  "../../services/ismobile.service";
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
+import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
+import { IsMobileService } from "../../services/ismobile.service";
 
 
 @Component({
@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
 
   constructor(private router: Router,
-              private pp: PassUploadedDataService,
-              private ismobileService: IsMobileService) {
+    private pp: PassUploadedDataService,
+    private ismobileService: IsMobileService) {
   }
 
   ngOnInit() {
@@ -32,9 +32,16 @@ export class HeaderComponent implements OnInit {
 
       let reader = new FileReader();
       reader.onload = (e) => {
-        this.pp.setData({"previewImage":reader.result, "action": "upload"});
-        inputElem.value = null;
-        this.router.navigate(['/upload']);
+        let mimeType = reader.result.split(",")[0].split(":")[1].split(";")[0];
+        let isMimeAccepted = !!mimeType.match("image/*");
+        if(isMimeAccepted){
+          this.pp.setData({ "previewImage": reader.result, "action": "upload" });
+          inputElem.value = null;
+          this.router.navigate(['/upload']);
+        }
+        else{
+          this.router.navigate(['/uploaderror']);
+        }
       }
       reader.readAsDataURL(inputElem.files[0]);
     }

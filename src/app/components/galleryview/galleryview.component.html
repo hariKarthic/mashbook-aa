@@ -1,29 +1,32 @@
 <sb-toaster></sb-toaster>
 <div class="container-fluid sb-gallery m-xs">
-    <ng-container *ngIf="!isLoading">
-        <ng-container *ngIf="cards?.length>0">
-            <div class="sb-gallery_grid" #grid>
-                <div class="sb-gallery_sizer"></div>
-                <sb-photoitem *ngFor="let card of cards;let i=index" [card]="card"></sb-photoitem>
-            </div>
-        </ng-container>
-        <ng-container *ngIf="!cards||cards.length == 0">
-          <div class="row">
-            <div class="col-xs-12 sb-gallery_mood">
-              <h1 class="text-center">
-                <span>Time to make some memories!...</span>
-                <md-icon>mood</md-icon>
-              </h1>
-              <div class="sb-gallery__ph">
-                <label md-icon-button for="uploadPhotoHeader" class="">
+  <ng-container *ngIf="!isLoading">
+    <ng-container *ngIf="cards?.length>0">
+      <div class="sb-gallery_grid" #grid>
+        <div class="sb-gallery_sizer"></div>
+        <sb-photoitem *ngFor="let card of cards;let i=index" [card]="card"></sb-photoitem>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!cards||cards.length == 0">
+      <div class="row">
+        <div class="col-xs-12 sb-gallery_mood">
+          <h1 class="text-center">
+            <span>Time to make some memories!...</span>
+            <md-icon>mood</md-icon>
+          </h1>
+          <div class="sb-gallery__ph">
+            <label md-icon-button for="uploadPhotoHeader" class="">
                   <span class="mat-button-wrapper" class="fontSize_high">
                     <md-icon alt="open camera" style="font-size:12rem;">photo_camera</md-icon>
                   </span>
-                </label>
-                <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/x-png,image/gif,image/jpeg" id="uploadPhotoHeader" (change)="onFileUpload($event)" #uploadPhoto>
-              </div>
-            </div>
+            </label>
+            <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/x-png,image/gif,image/jpeg"
+                   id="uploadPhotoHeader" (change)="onFileUpload($event)" #uploadPhoto>
           </div>
-        </ng-container>
-    </ng-container>
+        </div>
+      </div>
+</div>
+</div>
+</ng-container>
+</ng-container>
 </div>

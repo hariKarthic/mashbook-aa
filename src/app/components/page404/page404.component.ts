@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IsMobileService } from "../../services/ismobile.service";
 
 @Component({
   selector: 'sb-page404',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page404Component implements OnInit {
 
-  constructor() { }
+  isMobile: boolean = false;
+  constructor(private ismobileService: IsMobileService) { }
 
   ngOnInit() {
+    this.isMobile = this.ismobileService.mobile();
   }
 
 }

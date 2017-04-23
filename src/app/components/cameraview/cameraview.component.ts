@@ -1,8 +1,8 @@
-import {Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {StorageService} from "./../../services/storage.service";
-import {GlobalConfig} from './../../services/globalConfig.service';
-import {PassUploadedDataService} from '../../services/pass-uploaded-data.service';
+import { Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from "./../../services/storage.service";
+import { GlobalConfig } from './../../services/globalConfig.service';
+import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 
 
 @Component({
@@ -29,9 +29,9 @@ export class CameraviewComponent implements OnInit {
   activeViewContainer: String = "cameraStage";
 
   constructor(private StorageService: StorageService,
-              private router: Router,
-              private globalConfig: GlobalConfig,
-              private pp: PassUploadedDataService) {
+    private router: Router,
+    private globalConfig: GlobalConfig,
+    private pp: PassUploadedDataService) {
     router.events.subscribe((val) => {
       console.log(val);
       this.stopCapture();
@@ -84,7 +84,7 @@ export class CameraviewComponent implements OnInit {
 
     this.capturedImage = this.convertCanvasToImage(snapshotCanvas);
     this.stopCapture();
-    this.pp.setData({"previewImage": this.capturedImage, "action": "camera"});
+    this.pp.setData({ "previewImage": this.capturedImage, "action": "camera" });
     this.router.navigate(['/upload']);
     this.globalConfig.emitDisplayHeaderEvent(true);
   }
@@ -106,7 +106,7 @@ export class CameraviewComponent implements OnInit {
   startCamera() {
     navigator
       .mediaDevices
-      .getUserMedia({video: true})
+      .getUserMedia({ video: true })
       .then(this.handleSuccess.bind(this), this.handleError.bind(this));
   }
 

@@ -18,10 +18,24 @@ export class PushNotificationService {
         return this.messaging.getToken();
       }).then((token) => {
         console.log("has persmission: ", token);
-        const params = {
-          "registration_token": token,
-          "notification_topic": "my_journal"
+
+        let generateTopicWithOffset = (offset) => {
+          const prefix = (offset < 0) ? "__" : "_";
+          const postfix = Math.abs(offset);
+          return `scrap_book${prefix}${postfix}`;
         };
+
+        let generateTopic = () => {
+          const date = new Date();
+          const offset = date.getTimezoneOffset();
+          return generateTopicWithOffset(offset);
+        };
+
+        let params = {
+          "registration_token": token,
+          "notification_topic": generateTopic()
+        };
+
 
         axios({
           url: "https://scrapbook-mash.herokuapp.com/notification/subscribe",
@@ -29,10 +43,7 @@ export class PushNotificationService {
           headers: {
             'Content-Type': 'application/json'
           },
-          data: {
-            "registration_token": token,
-            "notification_topic": "my_journal"
-          }
+          data: params
         }).then(function (response) {
 
 

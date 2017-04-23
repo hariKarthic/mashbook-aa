@@ -1,10 +1,11 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {LandingComponent} from './components/landing/landing.component';
-import {CameraviewComponent} from './components/cameraview/cameraview.component';
-import {GalleryviewComponent} from './components/galleryview/galleryview.component';
-import {PhotoviewComponent} from './components/photoview/photoview.component';
-import {UploadviewComponent} from './components/uploadview/uploadview.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from './components/landing/landing.component';
+import { CameraviewComponent } from './components/cameraview/cameraview.component';
+import { GalleryviewComponent } from './components/galleryview/galleryview.component';
+import { PhotoviewComponent } from './components/photoview/photoview.component';
+import { UploadviewComponent } from './components/uploadview/uploadview.component';
+import { Page404Component } from './components/page404/page404.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'upload', component: UploadviewComponent
+  }, 
+  {
+    path: '**', component: Page404Component
   }
 ];
 

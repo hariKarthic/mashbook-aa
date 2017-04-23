@@ -1,5 +1,11 @@
-<sb-header *ngIf="!isLanding"></sb-header>
-<main class="mainelem" data-bg-text="A Flashback for the day , some text ">
+<header *ngIf="showHeader===true" class="headerelem">
+  <sb-header></sb-header>
+</header>
+
+<div *ngIf="showLoader===true">
+  <sb-page-loader></sb-page-loader>
+</div>
+
+<main>
   <router-outlet></router-outlet>
 </main>
-

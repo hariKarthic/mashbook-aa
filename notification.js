@@ -48,7 +48,8 @@ exports.publish = function (server_key) {
         return generateTopicWithOffset(possibleOffset);
     };
 
-    let notificationTopic = getTargetTopic("17:45");
+    // Add time in 24hrs format.
+    let notificationTopic = getTargetTopic("20:00");
     console.log('notificationTopic', notificationTopic);
 
 

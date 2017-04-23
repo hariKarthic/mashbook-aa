@@ -26,7 +26,7 @@ export class CameraviewComponent implements OnInit {
   showTextArea: boolean = false;
   photoComments: string;
   videoTracks: any;
-  activeViewContainer: String = "cameraStage";
+  activeViewContainer: string;
 
   constructor(private StorageService: StorageService,
     private router: Router,
@@ -51,13 +51,12 @@ export class CameraviewComponent implements OnInit {
   }
 
   handleSuccess(stream) {
+
     this.cameraSkinStage.nativeElement.srcObject = stream;
     this.videoTracks = stream.getVideoTracks();
   }
 
   handleError(err) {
-
-    console.log("Error while starting Video Camera!!", err);
     this.activeViewContainer = "cameraError";
 
     switch (err.name) {
@@ -68,6 +67,8 @@ export class CameraviewComponent implements OnInit {
       default:
         break;
     }
+
+    this.globalConfig.emitDisplayHeaderEvent(true);
   }
 
   handleCapture(event) {
@@ -108,6 +109,8 @@ export class CameraviewComponent implements OnInit {
       .mediaDevices
       .getUserMedia({ video: true })
       .then(this.handleSuccess.bind(this), this.handleError.bind(this));
+
+    this.activeViewContainer = "cameraStage";
   }
 
 }

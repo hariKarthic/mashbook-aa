@@ -33,7 +33,7 @@ export class CameraviewComponent implements OnInit {
     private globalConfig: GlobalConfig,
     private pp: PassUploadedDataService) {
     router.events.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
       this.stopCapture();
     });
   }
@@ -99,7 +99,7 @@ export class CameraviewComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    console.log("Child Views initiated!!!");
+    // console.log("Child Views initiated!!!");
     this.startCamera();
   }
 

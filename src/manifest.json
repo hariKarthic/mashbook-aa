@@ -1,0 +1,29 @@
+{
+  "short_name": "Scrapbook",
+  "name": "Selfie Scrapbook",
+  "icons": [
+    {
+      "src": "icons/camera_black_36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/camera_black_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/camera_black_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/camera_black_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait"
+}

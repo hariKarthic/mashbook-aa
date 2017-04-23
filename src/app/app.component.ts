@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.PushNotificationService;
+    // this.PushNotificationService;
 
     this.subscibeToHeaderEvents();//detect route change to emit event to control header visibility
 

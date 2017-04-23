@@ -11,7 +11,14 @@ export class PushNotificationService {
   constructor( @Inject(FirebaseApp) private _firebaseApp) {
 
     this.messaging = this._firebaseApp.messaging();
+  }
 
+  /**
+   * @name requestNotificationService
+   * @desc Requests access for notification access
+   */
+
+  requestNotificationService() {
     this.messaging
       .requestPermission()
       .then(() => {

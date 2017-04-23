@@ -12,6 +12,7 @@ import { Base2blobService } from '../../services/base2blob.service';
 import { Card } from '../../models/card.model';
 
 
+
 @Component({
 	selector: 'sb-uploadview',
 	templateUrl: './uploadview.component.html',
@@ -88,7 +89,7 @@ export class UploadviewComponent implements OnInit {
 	 * @param event
 	 **/
 	storeData(event) {
-		let data = new Card(this.Utils.getRandomID(), Date.now(), this.caption, this.imageInfo.previewImage, this.selectedFilter);
+		let data = new Card("img", this.Utils.getRandomID(), Date.now(), this.caption, this.imageInfo.previewImage, this.selectedFilter);
 		this.Storage.getData('cards').then((val: any) => {
 			if (!val) { val = [] };
 			this.Storage.setData('cards', val.concat(data)).then((resp) => {

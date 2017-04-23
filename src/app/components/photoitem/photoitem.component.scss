@@ -3,8 +3,11 @@
   margin-bottom: 5px;
 }
 
-.sb-gallery_item.m-full {
+.sb-gallery_item.m-caption {
   width: 100%;
+  font-weight:bold;
+  text-align:center;
+  font-size: 1.8rem;
 }
 
 .sb-gallery_item {
@@ -19,6 +22,12 @@
 @media (max-width: 577px) {
   .sb-gallery_item {
     width: 100%;
+  }
+
+  .sb-gallery_item.m-caption {
+    font-weight:bold;
+    text-align:center;
+    font-size: 1.8rem;
   }
 
 }

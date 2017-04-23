@@ -5,6 +5,7 @@ import { CameraviewComponent } from './components/cameraview/cameraview.componen
 import { GalleryviewComponent } from './components/galleryview/galleryview.component';
 import { PhotoviewComponent } from './components/photoview/photoview.component';
 import { UploadviewComponent } from './components/uploadview/uploadview.component';
+import { UploadErrorComponent } from './components/upload-error/upload-error.component';
 import { Page404Component } from './components/page404/page404.component';
 
 
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'upload', component: UploadviewComponent
+  }, 
+  {
+    path: 'uploaderror', component: UploadErrorComponent
   }, 
   {
     path: '**', component: Page404Component

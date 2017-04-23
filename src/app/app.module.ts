@@ -28,6 +28,7 @@ import { IsMobileService } from "./services/ismobile.service";
 import { Page404Component } from './components/page404/page404.component';
 import { PageLoaderComponent } from './components/page-loader/page-loader.component';
 import { ToasterComponent } from './components/toaster/toaster.component';
+import { UploadErrorComponent } from './components/upload-error/upload-error.component';
 
 
 // Initialize Firebase
@@ -60,6 +61,7 @@ const myFirebaseAuthConfig = {
     PageLoaderComponent,
     Page404Component,
     ToasterComponent,
+    UploadErrorComponent,
   ],
   imports: [
     BrowserModule,

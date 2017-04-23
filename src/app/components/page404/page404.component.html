@@ -1,3 +1,23 @@
-<p>
-  page404 works!
-</p>
+<ng-container>
+  <div class="row">
+    <div class="col-xs-12 sb-gallery_mood">
+      <h1 class="text-center">
+        <span>Lost...?</span><br><br>
+        <span>Back to memory lane!...</span>
+        <md-icon>mood</md-icon>
+      </h1>
+      <div class="sb-gallery__ph">
+        <ng-container *ngIf="!isMobile">
+          <button class="fontSize_high" routerLink="/camera">
+              <md-icon alt="open camera" style="font-size:12rem;">photo_camera</md-icon>
+            </button>
+        </ng-container>
+        <ng-container *ngIf="isMobile">
+          <button class="fontSize_high" routerLink="/camera">
+              <md-icon alt="open camera" style="font-size:12rem;">photo_camera</md-icon>
+            </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

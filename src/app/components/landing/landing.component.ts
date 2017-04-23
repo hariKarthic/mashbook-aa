@@ -24,9 +24,7 @@ export class LandingComponent implements OnInit {
     /*navigate to gallery after 2 secs...*/
 
     setTimeout(() => {
-
-     // this.router.navigate(["/gallery"]);
-
+      this.router.navigate(["/gallery"]);
     }, 4000);
 
   }

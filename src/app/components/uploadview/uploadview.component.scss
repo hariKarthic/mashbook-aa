@@ -97,6 +97,7 @@
   padding:5px;
   color:#000;
   border: 1px solid #c1c1c1;
+  max-width:100%;
 }
 
 .pj-takenimg-wrap{
@@ -125,7 +126,7 @@
 @media (max-width: 577px) {
 
   .captured-image-container{
-    width: 50vw;
+    width: 80vw;
     height: 50vh;
     margin: 0 auto;
     border: 1px dotted #c2c2c2;
@@ -137,7 +138,7 @@
   .captured-image-container img{
     width:auto;
     height:auto;
-    max-width:50vw;
+    max-width:80vw;
     max-height:50vh;
     border: 10px solid #fff;
     box-shadow: 3px 3px 3px #777;

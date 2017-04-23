@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
 
     this.isMobile = this.ismobileService.mobile();
-    console.log("ISMobile Device", this.isMobile);
+    // console.log("ISMobile Device", this.isMobile);
   }
 
 }

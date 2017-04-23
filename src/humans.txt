@@ -1,0 +1,16 @@
+/* TEAM */
+	Front End Developer: Abraham Jagadeesh
+	Github: abrahamjagadeesh
+	From:Bengaluru, India
+
+	Front End Developer: Shalini Jha
+	Github: ShaliniJha
+	From:Bengaluru, India
+
+	Creative Head: Hari Karthic Mahadevan
+	Github: hariKarthic
+	From:Bengaluru, India
+
+	Full Stack Developer: Mahesh Ambig
+	Github: maheshambiga
+	From:Bengaluru, India

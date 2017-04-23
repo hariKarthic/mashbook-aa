@@ -1,6 +1,18 @@
 var axios = require("axios");
 
-var msg = [];
+var msg = [
+    "Hi, Feeling like saving this moment? ",
+    "Relive this moment in the future. Take a pic :) ",
+    "Memories fade, but pictures will stay ",
+    "What were you doing at this time a few days back..? ",
+    "A Pic a day  will not keep the doctor away.But it does help your memories "
+];
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 exports.subscribe = function (server_key, registration_token, notification_topic) {
     return axios({
@@ -49,9 +61,9 @@ exports.publish = function (server_key) {
     };
 
     // Add time in 24hrs format.
-    let notificationTopic = getTargetTopic("20:00");
+    let notificationTopic = getTargetTopic("22:00");
     console.log('notificationTopic', notificationTopic);
-
+    let message = msg[getRandomIntInclusive(0, msg.length - 1)];
 
     return axios({
         url: "https://fcm.googleapis.com/fcm/send",
@@ -63,8 +75,8 @@ exports.publish = function (server_key) {
         data: {
             "notification": {
                 "title": "Scrapbook",
-                "body": "Hey, How are you today?",
-                "icon": "./favicon.png",
+                "body": message,
+                "icon": "./icons/camera_black_192x192.png",
                 "click_action": "https://scrapbook-29ef5.firebaseapp.com"
             },
             "to": "/topics/" + notificationTopic

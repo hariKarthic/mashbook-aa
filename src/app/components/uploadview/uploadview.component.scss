@@ -28,7 +28,7 @@
   transform: scaleX(-1);
 }
 .camera-skin-stage {
-  @extend .mirrorPhoto;
+  // @extend .mirrorPhoto;
   width: 100vw;
   height: 100vh;
   margin:0 auto;

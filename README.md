@@ -1,28 +1,38 @@
 # Scrapbook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+People are often busy with their schedule and most of the people forgotten the habit of writing dairy. This is an attempt to gently remind the users to store a snapshot at the end of their day with 
+an app in which one keeps a daily record of how the day was, with an image captured either on their phones as a selfie or via a web cam. 
 
-## Development server
+This app will remind people  through a push-notification at specified time intervals.
+This app works completely offline also.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Features
 
-## Code scaffolding
+* PWA
+* Push-notification
+* Camera Api
+* Uses Indexed DB
+* Offline
+* Image Filters
+* Image Blob
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Compatible Browser
 
-## Build
+* Latest Desktop & Mobile Chrome
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Proposed Features.. (in the near future :P)
 
-## Running unit tests
+* Login
+* File upload to cloud
+* Social sharing
+* Geotagging
+* Mobile app
+* Profile customisation.
+* ... more filters.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Authors
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Mahesh Ambig
+* Hari Karthic Mahadevan
+* Shalini Jha
+* Abraham Jagadeesh

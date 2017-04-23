@@ -40,7 +40,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
     this.StorageService.getData(this.Constants.cards)
     .then((resp:any)=> {
       if(resp && resp.length>0){
-        this.cards = resp;
+        this.cards = this.groupPicturesByMonth(resp.reverse());
         this.loadMasonry();
         }
         this.isLoading = false;
@@ -65,9 +65,30 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-   this.getCards()
+   this.getCards();
+  }
 
+  groupPicturesByMonth(items){
+    const  monthLabels = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let unordered = [];
+    const itemsGroupedByMonth = (items)=>{
+      let groups = [[], [], [], [], [], [], [], [], [], [], [], [],];
 
+      for (let i = 0; i < items.length; i++) {
+        const date = new Date(items[i].createdAt);
+        groups[date.getMonth()].push(items[i]);
+      }
+      for (let j = 0; j < groups.length; j++) {
+        if (groups[j].length) {
+
+          unordered = unordered.concat({type:"caption", caption:monthLabels[j]+" "+new Date(groups[j][0]["createdAt"]).getFullYear()});
+          unordered = unordered.concat(groups[j]);
+        }
+      }
+      return unordered;
+    };
+
+    return itemsGroupedByMonth(items);
   }
 
 

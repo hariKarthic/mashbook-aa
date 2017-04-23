@@ -120,3 +120,28 @@
   font-weight:bold;
   text-align: center;
 }
+
+
+@media (max-width: 577px) {
+
+  .captured-image-container{
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    border: 1px dotted #c2c2c2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+  }
+  .captured-image-container img{
+    width:auto;
+    height:auto;
+    max-width:50vw;
+    max-height:50vh;
+    border: 10px solid #fff;
+    box-shadow: 3px 3px 3px #777;
+    border-bottom: 20px solid #fff;
+
+  }
+}

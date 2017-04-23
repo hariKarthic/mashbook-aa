@@ -1,22 +1,27 @@
 .sb-header_spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .sb-header__icon {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .sb-footer {
-    position: fixed;
-    z-index: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #323232;
+  position: fixed;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #323232;
 }
 
 .sb-footer-container {
-    display: block;
-    .mat-toolbar-row {
-        justify-content: space-around;
-    }
+  display: block;
+  .mat-toolbar-row {
+    justify-content: space-around;
+  }
+}
+
+.sb-footer_sizer {
+  width: 10px;
+  flex: 1 1 auto;
 }

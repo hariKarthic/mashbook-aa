@@ -9,9 +9,30 @@
   border: 10px solid #fff;
   border-bottom: 60px solid #fff;
   box-shadow: 2px 2px 2px #777;
+  overflow:hidden;
 
 }
 
 .sb-photoview-comments {
 
+}
+
+
+@media (max-width:577px){
+  .sb-photoview_wrap{
+
+    width:90vw;
+    height:50vh;
+
+
+
+
+  }
+
+  .sb-photoview_wrap img{
+    max-width:90vw;
+    max-height:50vh;
+    width:auto;
+    height:auto;
+  }
 }

@@ -1,8 +1,8 @@
-import { Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { StorageService } from "./../../services/storage.service";
+import {Directive, Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {StorageService} from "./../../services/storage.service";
 import {GlobalConfig} from './../../services/globalConfig.service';
-import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
+import {PassUploadedDataService} from '../../services/pass-uploaded-data.service';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class CameraviewComponent implements OnInit {
   photoComments: string;
   videoTracks: any;
   activeViewContainer: String = "cameraStage";
-
+  
   constructor(
     private StorageService: StorageService,
     private router: Router,
@@ -40,9 +40,10 @@ export class CameraviewComponent implements OnInit {
     });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.globalConfig.emitDisplayHeaderEvent(false);
   }
+
   changeFilter(filter) {
     this.selectedFilter = filter;
   }
@@ -107,7 +108,7 @@ export class CameraviewComponent implements OnInit {
   startCamera() {
     navigator
       .mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({video: true})
       .then(this.handleSuccess.bind(this), this.handleError.bind(this));
   }
 

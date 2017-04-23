@@ -1,13 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
+import { fadeInAnimation } from "../../app-transition.module";
 
 
 @Component({
   selector: 'sb-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
+  animations: [fadeInAnimation],
+  // host: { '[@slideInDownAnimation]': '' }
 })
 export class LandingComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'inline-block';
+  // @HostBinding('style.position') position = 'absolute';
 
 
   constructor(private router: Router) {
@@ -19,9 +26,9 @@ export class LandingComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.router.navigate(["/gallery"]);
+      //this.router.navigate(["/gallery"]);
 
-    },4000);
+    }, 4000);
 
   }
 

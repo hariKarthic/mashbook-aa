@@ -21,13 +21,14 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   public mason: any;
 
   public cards: any;
+  isLoading:boolean = true;
 
   constructor( private StorageService: StorageService,
     private Constants: Constants) {
   }
 
   ngOnInit() {
-    // this.getCards()
+     this.getCards()
   }
 
   /**
@@ -41,6 +42,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
       if(resp.length>0){
         this.cards = resp;
         this.loadMasonry();
+        this.isLoading = false;
       }
     }, (err)=> {
       console.log(err)
@@ -50,6 +52,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   loadMasonry() {
      let photogrid = this.grid ? this.grid.nativeElement : "";
     /*Initialise Masonry*/
+    if(photogrid === "") return;
     /*TODO:Do a null check on photogrid*/
     imagesLoaded(photogrid, function () {
       this.mason = new Masonry(photogrid, {
@@ -67,6 +70,6 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
 
   }
 
-  
+
 
 }

@@ -14,6 +14,9 @@
 .captured-image-container{
   width: 40%;
   margin: 0 auto;
+  border: 10px solid #fff;
+  box-shadow: 3px 3px 3px #777;
+  border-bottom: 20px solid #fff;
 }
 .camera-skin-snapshot {
   width:100%;
@@ -84,6 +87,11 @@
   border: 1px solid #c1c1c1;
 }
 
+.pj-takenimg-wrap{
+  margin:10px 0;
+
+}
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 0;
@@ -91,6 +99,12 @@
 }
 .pj-camera_button-container{
   text-align:center;
-  margin-top: 50px;
+  margin-top: 20px;
   clear: both;
+}
+
+.filter-name{
+  display:block;
+  font-weight:bold;
+  text-align: center;
 }

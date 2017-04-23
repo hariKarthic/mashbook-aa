@@ -1,17 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/theming';
 
+@include mat-core();
 
-// @import '~@angular/material/theming';
-// @include mat-core();
+$white-christmas-primary: mat-palette($mat-grey, 100, 50, 300);
+$white-christmas-accent: mat-palette($mat-red, 600, 400, 700);
 
+$white-christmas-warn: mat-palette($mat-red);
 
-// $white-christmas-primary:mat-pallete($mat-grey,100,50,300);
-// $white-christmas-accent:mat-pallete($mat-red,600,400,700);
+$white-chirtmas-theme: mat-light-theme($white-christmas-primary, $white-christmas-accent, $white-christmas-warn);
 
-// $white-christmas-warn:mat-pallete($mat-red);
+@include angular-material-theme($white-chirtmas-theme);
 
-// $white-christmas-theme: mat-light-theme($white-christmas-primary, $white-christmas-accent, $white-christmas-warn);
+/*Common styles for some elements*/
 
-// @include angular-material-theme($white-christmas-theme);
+.headerelem {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index:1001;
+  border-bottom: 1px solid #777;
+  -webkit-box-shadow: 0 2px 2px #777;
+  -moz-box-shadow: 0 2px 2px #777;
+  box-shadow: 0 2px 2px #777;
+}
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.mainelem {
+  position: relative;
+  top: 70px;
+
+}
+

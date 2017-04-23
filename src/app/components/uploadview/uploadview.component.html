@@ -1,46 +1,61 @@
 <div class="container">
-    <ng-container [ngSwitch]="activeViewContainer">
-        <ng-container *ngSwitchCase="'photoTaken'" class="">
-            <div class="row">
-                <div class="pj-camera-picture-wrap">
-                    <figure #capturedImageContainer class="captured-image-container {{selectedFilter}}">
-                        <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
-                    </figure>
-                    <div class="filtersPreviewContainer">
-                        <div id="filtersPreview">
-                            <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
-                                <img [src]="blobUrl" alt="filterimage">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="pj-camera_button-container">
-                        <button md-raised-button class="" id="reject-photo" (click)="rejectCapture($event)">
-                            Cancel
-                        </button>
-                        <button md-raised-button class="" id="accept-photo" (click)="acceptCapture($event)">
-                            Next
-                        </button>
-                    </div>
-                </div>
+  <ng-container [ngSwitch]="activeViewContainer">
+    <ng-container *ngSwitchCase="'photoTaken'" class="">
+      <div class="row">
+        <div class="pj-camera-picture-wrap">
+          <figure #capturedImageContainer class="captured-image-container {{selectedFilter}}">
+            <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
+          </figure>
+          <div class="filtersPreviewContainer">
+            <div id="filtersPreview">
+              <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
+                <img [src]="imageInfo.previewImage" alt="filterimage">
+
+                <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
+                  <img [src]="blobUrl" alt="filterimage">
+                  <figcaption class="filter-name">{{c}}</figcaption>
+                </figure>
             </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="'showTextArea'">
-            <div class="container">
-                <section class=" col-xs-12 pj-camera__comments ">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 {{selectedFilter}}">
-                            <img crossOrigin="Anonymous" #capturedImageHolder [src]="blobUrl" alt="takenimage" class="col-xs-12" />
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea col-xs-12" [(ngModel)]='caption' rows="10" cols="50"></textarea>
-                            <div class="pj-camera_button-container">
-                                <button md-raised-button class="" (click)="rejectCapture($event)">Cancel</button>
-                                <button md-raised-button class="" (click)="storeData($event)">Next</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </ng-container>
+          </div>
+          <div class="pj-camera_button-container">
+            <button md-raised-button color="accent" id="reject-photo" (click)="rejectCapture($event)">
+              <md-icon>clear</md-icon>
+              Cancel
+            </button>
+            <button md-raised-button color="accent" id="accept-photo" (click)="acceptCapture($event)">
+              <md-icon>done</md-icon>
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
     </ng-container>
+    <ng-container *ngSwitchCase="'showTextArea'">
+      <div class="container">
+        <section class=" col-xs-12 pj-camera__comments ">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 pj-takenimg-wrap">
+              <div ngClass="{{selectedFilter}}">
+                <img crossOrigin="Anonymous" #capturedImageHolder [src]="blobUrl" alt="takenimage" class="col-xs-12"/>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea" [(ngModel)]='caption'
+                        rows="10" cols="50"></textarea>
+              <div class="pj-camera_button-container">
+                <button md-raised-button color="accent" (click)="rejectCapture($event)">
+                  <md-icon>clear</md-icon>
+                  Cancel
+                </button>
+                <button md-raised-button color="accent" (click)="storeData($event)">
+                  <md-icon>done</md-icon>
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </ng-container>
+  </ng-container>
 </div>

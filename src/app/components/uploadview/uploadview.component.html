@@ -4,12 +4,12 @@
             <div class="row">
                 <div class="pj-camera-picture-wrap">
                     <figure #capturedImageContainer ngClass="captured-image-container mirrorPhoto {{selectedFilter}}">
-                        <img [src]="imageInfo.previewImage" alt="filterimage" ngClass="camera-skin-snapshot">
+                        <img [src]="blobUrl" alt="filterimage" ngClass="camera-skin-snapshot">
                     </figure>
                     <div class="filtersPreviewContainer">
                         <div id="filtersPreview">
                             <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
-                                <img [src]="imageInfo.previewImage" alt="filterimage">
+                                <img [src]="blobUrl" alt="filterimage">
                             </figure>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                 <section class=" col-xs-12 pj-camera__comments ">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6" ngClass="{{selectedFilter}}">
-                            <img crossOrigin="Anonymous" #capturedImageHolder src="{{imageInfo.previewImage}}" alt="takenimage" class="col-xs-12" />
+                            <img crossOrigin="Anonymous" #capturedImageHolder [src]="blobUrl" alt="takenimage" class="col-xs-12" />
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea col-xs-12" [(ngModel)]='caption' rows="10" cols="50"></textarea>

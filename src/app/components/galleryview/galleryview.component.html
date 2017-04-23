@@ -9,17 +9,16 @@
     </ng-container>
     <ng-container *ngIf="!cards||cards.length == 0">
       <div class="row">
-        <div class="col-xs-12">
-          <h1>
-            <md-icon>sentiment_dissatisfied</md-icon>
-            <span>There are no memories</span>
+        <div class="col-xs-12 sb-gallery_mood">
+          <h1 class="text-center">
+            <span>Time to make some memories!...</span>
+            <md-icon>mood</md-icon>
           </h1>
-          <button color="accent" md-raised-button routerLink="/camera">
-            Camera
-          </button>
-          <button color="accent" md-raised-button routerLink="/gallery">
-            Upload
-          </button>
+          <div class="sb-gallery__ph">
+            <button class="fontSize_high" routerLink="/camera">
+              <md-icon alt="open camera" style="font-size:12rem;">photo_camera</md-icon>
+            </button>
+          </div>
         </div>
       </div>
     </ng-container>

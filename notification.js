@@ -48,7 +48,7 @@ exports.publish = function (server_key) {
         return generateTopicWithOffset(possibleOffset);
     };
 
-    let notificationTopic = getTargetTopic("15:15");
+    let notificationTopic = getTargetTopic("16:00");
 
     return axios({
         url: "https://fcm.googleapis.com/fcm/send",

@@ -25,7 +25,22 @@ var server_key = "AAAAt2EKL3U:APA91bHmiWZW71cQ1Th4sunczaC0I9KxwfD67suF_xElz3cHa2
 var notificationTopic = null;
 var jobId = null;
 
+scheduleNotification();
 
+
+function scheduleNotification() {
+
+  if (jobId !== null) {
+    jobId.cancel();
+  }
+
+  console.log('Scheduling called');
+
+  jobId = schedule.scheduleJob("0 */2 * * * *", function () {
+    console.log('Scheduling running');
+    notifications.publish(server_key);
+  });
+}
 
 /**
  * Call this API from clients to subscribe to notifications.
@@ -37,7 +52,7 @@ app.post("/notification/subscribe", function (req, res) {
 
   notifications.subscribe(server_key, registration_token, notification_topic).then(function (response) {
 
-    console.log("[RESPONSE]: ", response);
+    console.log("[RESPONSE]: ", registration_token, notification_topic);
 
     notificationTopic = notification_topic;
 
@@ -46,7 +61,7 @@ app.post("/notification/subscribe", function (req, res) {
       "statusText": "Successfully subscribed to " + notification_topic + " notification group."
     });
 
-    scheduleNotification();
+
   }).catch(function (error) {
     console.log("[ERROR]: ", error);
     res.status(response.status).json({
@@ -77,17 +92,6 @@ app.post("/notification/send", function (req, res) {
   });
 });
 
-function scheduleNotification() {
-
-  if (jobId !== null) {
-    jobId.cancel();
-  }
-
-  jobId = schedule.scheduleJob("0 */1 * * * *", function () {
-    console.log('Scheduling running');
-    notifications.publish(server_key, notificationTopic);
-  });
-}
 
 app.get('/', function (req, res) {
   res.send('Hello World! This is a Scrapbook backend code.')

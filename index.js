@@ -83,7 +83,7 @@ function scheduleNotification() {
     jobId.cancel();
   }
 
-  jobId = schedule.scheduleJob("0 */5 * * * *", function () {
+  jobId = schedule.scheduleJob("0 */1 * * * *", function () {
     console.log('Scheduling running');
     notifications.publish(server_key, notificationTopic);
   });

@@ -97,6 +97,7 @@ export class UploadviewComponent implements OnInit {
 		this.Storage.getData('cards').then((val: any) => {
 			if (!val) { val = [] };
 			this.Storage.setData('cards', val.concat(data)).then((resp) => {
+				this.pp.setData("")
 				this.router.navigate(['/gallery']);
 			});
 		});

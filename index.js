@@ -84,6 +84,7 @@ function scheduleNotification() {
   }
 
   jobId = schedule.scheduleJob("0 */5 * * * *", function () {
+    console.log('Scheduling running');
     notifications.publish(server_key, notificationTopic);
   });
 }

@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
           this.router.navigate(['/upload']);
         }
         else{
-          
+          this.router.navigate(['/uploaderror']);
         }
       }
       reader.readAsDataURL(inputElem.files[0]);

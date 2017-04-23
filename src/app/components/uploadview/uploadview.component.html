@@ -3,15 +3,17 @@
     <ng-container *ngSwitchCase="'photoTaken'" class="">
       <div class="row">
         <div class="pj-camera-picture-wrap">
-          <figure #capturedImageContainer class="captured-image-container {{selectedFilter}}">
-            <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
-          </figure>
+          <div class="captured-image-container">
+            <figure #capturedImageContainer class="{{selectedFilter}}">
+              <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
+            </figure>
+          </div>
           <div class="filtersPreviewContainer">
             <div id="filtersPreview">
-                <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
-                  <img [src]="blobUrl" alt="filterimage">
-                  <figcaption class="filter-name">{{c}}</figcaption>
-                </figure>
+              <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
+                <img [src]="blobUrl" alt="filterimage">
+                <figcaption class="filter-name">{{c}}</figcaption>
+              </figure>
             </div>
           </div>
           <div class="pj-camera_button-container">
@@ -37,6 +39,7 @@
               </div>
             </div>
             <div class="col-xs-12 col-sm-6">
+              <h2>How about a few words on the awesome moment?</h2>
               <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea" [(ngModel)]='caption'
                         rows="10" cols="50"></textarea>
               <div class="pj-camera_button-container">

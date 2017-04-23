@@ -1,6 +1,10 @@
 .sb-landing {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 }
 
 .sb-landing::before {
@@ -18,10 +22,7 @@
 }
 
 .sb-landing_polaroid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position:relative;
   margin: 0 auto;
   width: 380px;
   height: 380px;
@@ -29,6 +30,7 @@
   border-bottom: 60px solid #fff;
   box-shadow: 3px 3px 3px #777;
   background-image: url('https://lorempixel.com/1200/900/people/');
+  background-attachment: fixed;
   background-size: cover;
   background-color: #fff;
 
@@ -37,5 +39,14 @@
 .sb-landing_msg {
   text-align: center;
   width: 50%;
+  position: relative;
   margin: 0 auto;
+  top:-60px;
+}
+
+@media (min-width:576px ){
+  .sb-landing_polaroid{
+    width: 580px;
+    height: 580px;
+  }
 }

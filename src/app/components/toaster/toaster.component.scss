@@ -16,11 +16,11 @@
 }
 
 .show-toaster {
-    display: block;   
+    display: block;
 }
 
 .hide-toaster {
-    display: none;   
+    display: none;
 }
 .sb-notification-link, .sb-notification-close {
     font-style: normal;
@@ -37,5 +37,6 @@
 .sb-notification-close {
     padding: 0.5em;
     color: #FFF;
+  cursor: pointer;
     float: right;
 }

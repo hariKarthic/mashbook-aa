@@ -1,0 +1,13 @@
+.sb-footer {
+  position: fixed;
+  background-color: #fff;
+  color: #000;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.sb-footer.m-mobile  .mat-toolbar-row {
+  justify-content: space-around; /*to override material design flex layout*/
+}

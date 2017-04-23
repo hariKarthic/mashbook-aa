@@ -31,7 +31,7 @@ export class CameraviewComponent implements OnInit {
   constructor(private StorageService: StorageService,
               private router: Router,
               private globalConfig: GlobalConfig,
-              private pp: PassUploadedDataService,) {
+              private pp: PassUploadedDataService) {
     router.events.subscribe((val) => {
       console.log(val);
       this.stopCapture();
@@ -39,7 +39,7 @@ export class CameraviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.globalConfig.emitDisplayHeaderEvent(false);
+
   }
 
   changeFilter(filter) {

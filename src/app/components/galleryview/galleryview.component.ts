@@ -29,6 +29,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
      this.getCards()
+     this.StorageService.deleteData("cards")
   }
 
   /**
@@ -39,7 +40,7 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
   getCards() {
     this.StorageService.getData(this.Constants.cards)
     .then((resp:any)=> {
-      if(resp.length>0){
+      if(resp && resp.length>0){
         this.cards = resp;
         this.loadMasonry();
         this.isLoading = false;

@@ -1,0 +1,13 @@
+<div id="notification-banner" class="row sb-notification-banner" *ngIf="showToaster && accessInfo !== 'denied'">
+    <span >
+        Boss, we need your permission to show notification.
+        Please <a class="sb-notification-link" (click)="showNotificationDialog()">click here</a> to enable it.
+    </span>
+    <a (click)="dismissToaster()" class="sb-notification-close">X</a>
+</div>
+<div class="row sb-notification-banner" *ngIf="showToaster && accessInfo === 'denied'">
+    <span>
+    	You might lose important events from us. Please visit your browser settings to enable notifications.
+    </span>
+    <a (click)="dismissToaster()" class="sb-notification-close"><md-icon>close</md-icon></a>
+</div>

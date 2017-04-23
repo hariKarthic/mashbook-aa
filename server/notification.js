@@ -61,7 +61,7 @@ exports.publish = function (server_key) {
     };
 
     // Add time in 24hrs format.
-    let notificationTopic = getTargetTopic("21:30");
+    let notificationTopic = getTargetTopic("22:00");
     console.log('notificationTopic', notificationTopic);
     let message = msg[getRandomIntInclusive(0, msg.length - 1)];
 

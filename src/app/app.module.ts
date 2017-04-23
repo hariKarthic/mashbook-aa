@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MdToolbarModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
+import {MdSidenavModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -67,7 +68,8 @@ const myFirebaseAuthConfig = {
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig),
     MdToolbarModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    MdSidenavModule
   ],
   providers: [PassUploadedDataService, GlobalConfig, IsMobileService],
   bootstrap: [AppComponent]

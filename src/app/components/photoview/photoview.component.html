@@ -1,5 +1,5 @@
 <div class="row" *ngIf="(cardDetail.id && dataFound); else noCard  ">
-	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ngClass={{cardDetail.selectedFilter}}>
 		<img [src]="cardDetail.src" />
 	</div>
 	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">

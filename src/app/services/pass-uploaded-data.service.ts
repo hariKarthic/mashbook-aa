@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PassUploadedDataService {
 
-  uri: any = "";
+  uri: any;
 
   getData() {
     return this.uri;

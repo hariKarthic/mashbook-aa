@@ -1,50 +1,15 @@
-<!-- <div class="row preview-container">
-  <div class="col-xs-12 col-sm-6">
-    <div class="sb-upload__image">
-        <div class="sb-upload__imagewrap">
-            <img #previewImageHolder [src]="previewImage" ngClass="{{selectedFilter}}" alt="preview" class="preview-image" />
-        </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-6">
-    <textarea #commentText placeholder="Dont feel shy..." class="pj-choosepic__textarea" [(ngModel)]='caption' rows="20">
-    </textarea>
-  </div>
-  <div class="col-xs-12">
-    <div class="sb-upload__filterframe">
-      <div id="filtersPreview" class="filters-container">
-          <figure class="filter" *ngFor="let c of cssfilters" ngClass="sb-upload__filters {{c}}" (click)="changeFilter(c)">
-              <img [src]="previewImage" alt="filterimage">
-          </figure>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-
-<div class="col-xs-12 pj-choosepic__btnwrap">
-    <button md-raised-button color="primary" class="camera-skin-btn" id="accept-photo" (click)="acceptUpload($event)">
-        <md-icon>done</md-icon>
-        Done
-    </button>
-    <button md-raised-button color="accent" class="camera-skin-btn" id="reject-photo" (click)="rejectUpload($event)">
-        <md-icon>clear</md-icon>
-        Clear
-    </button>
-</div> -->
 <div class="row">
     <ng-container [ngSwitch]="activeViewContainer">
         <ng-container *ngSwitchCase="'photoTaken'" class="">
             <div class="container">
                 <div class="pj-camera-picture-wrap">
                     <figure #capturedImageContainer ngClass="captured-image-container mirrorPhoto {{selectedFilter}}">
-                        <img [src]="previewImage" alt="filterimage" ngClass="camera-skin-snapshot">
+                        <img [src]="imageInfo.previewImage" alt="filterimage" ngClass="camera-skin-snapshot">
                     </figure>
                     <div class="filtersPreviewContainer">
                         <div id="filtersPreview">
-                            <figure *ngFor="let c of cssfilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
-                                <img [src]="previewImage" alt="filterimage">
+                            <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
+                                <img [src]="imageInfo.previewImage" alt="filterimage">
                             </figure>
                         </div>
                     </div>
@@ -64,7 +29,7 @@
                 <section class=" col-xs-12 pj-camera__comments ">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6" ngClass="{{selectedFilter}}">
-                            <img crossOrigin="Anonymous" #capturedImageHolder src="{{previewImage}}" alt="takenimage" class="col-xs-12 mirrorPhoto" />
+                            <img crossOrigin="Anonymous" #capturedImageHolder src="{{imageInfo.previewImage}}" alt="takenimage" class="col-xs-12" />
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <textarea #commentText placeholder="Write a caption..." class="pj-camera_textarea col-xs-12" [(ngModel)]='caption' rows="10" cols="50"></textarea>

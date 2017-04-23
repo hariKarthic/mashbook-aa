@@ -14,9 +14,9 @@ export class PhotoviewComponent implements OnInit {
 	id:string;
 	private sub: any;
 	cardDetail:any = {};
-	dataFound:boolean = false;
+	loading:boolean = true;
 
-  	constructor(private Storage: StorageService, private Constants: Constants, private route: ActivatedRoute) { 
+  	constructor(private Storage: StorageService, private Constants: Constants, private route: ActivatedRoute) {
   	}
 
   	ngOnInit() {
@@ -40,11 +40,11 @@ export class PhotoviewComponent implements OnInit {
 	  					return cardObj;
 	  				}
 	  			})[0];
-	  			this.dataFound = this.cardDetail.id?true:false;
+	  			this.loading = false;
   			}else{
-  				this.dataFound = false;
-  			}
-  			
+          this.loading = false;
+        }
+
   		})
   	}
 

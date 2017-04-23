@@ -112,5 +112,18 @@ export class CameraviewComponent implements OnInit {
 
     this.activeViewContainer = "cameraStage";
   }
+  onFileUpload(event) {
+    let inputElem = event.currentTarget;
+    if (inputElem.files && inputElem.files[0]) {
+
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        this.pp.setData({"previewImage":reader.result, "action": "upload"});
+        inputElem.value = null;
+        this.router.navigate(['/upload']);
+      }
+      reader.readAsDataURL(inputElem.files[0]);
+    }
+  }
 
 }

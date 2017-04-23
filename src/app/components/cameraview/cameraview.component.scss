@@ -14,6 +14,9 @@
 .captured-image-container{
   width: 40%;
   margin: 0 auto;
+  border: 10px solid #fff;
+  box-shadow: 3px 3px 3px #777;
+  border-bottom: 20px solid #fff;
 }
 .camera-skin-snapshot {
   width:100%;
@@ -91,6 +94,6 @@
 }
 .pj-camera_button-container{
   text-align:center;
-  margin-top: 50px;
+  margin-top: 20px;
   clear: both;
 }

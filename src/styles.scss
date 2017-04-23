@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$white-christmas-primary: mat-palette($mat-grey, 100, 50, 300);
+$white-christmas-accent: mat-palette($mat-red, 600, 400, 700);
+
+$white-christmas-warn: mat-palette($mat-red);
+
+$white-chirtmas-theme: mat-light-theme($white-christmas-primary, $white-christmas-accent, $white-christmas-warn);
+
+@include angular-material-theme($white-chirtmas-theme);
+
+/*Common styles for some elements*/
+
+.headerelem {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index:1001;
+  border-bottom: 1px solid #777;
+  -webkit-box-shadow: 0 2px 2px #777;
+  -moz-box-shadow: 0 2px 2px #777;
+  box-shadow: 0 2px 2px #777;
+}
+
+.mainelem {
+  position: relative;
+  top: 70px;
+
+}

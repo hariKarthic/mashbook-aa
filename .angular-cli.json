@@ -13,7 +13,8 @@
         "sb-sw.js",
         "firebase-messaging-sw.js",
         "icons",
-        "manifest.json"
+        "manifest.json",
+        "humans.txt"
       ],
       "index": "index.html",
       "main": "main.ts",

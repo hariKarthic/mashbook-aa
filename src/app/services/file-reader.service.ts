@@ -1,25 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { IsMobileService } from "../../services/ismobile.service";
-// import { FileReaderService } from '../../services/file-reader.service';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'sb-page404',
-  templateUrl: './page404.component.html',
-  styleUrls: ['./page404.component.scss']
-})
-export class Page404Component implements OnInit {
-
-  isMobile: boolean = false;
-  constructor(private ismobileService: IsMobileService,
-  // private fileReader: FileReaderService
-  ) { }
-
-  ngOnInit() {
-    this.isMobile = this.ismobileService.mobile();
-  }
+@Injectable()
+export class FileReaderService {
 
   // onFileUpload(event) {
-  //   // this.fileReader.onFileUpload(event);
   //   let inputElem = event.currentTarget;
   //   if (inputElem.files && inputElem.files[0]) {
 

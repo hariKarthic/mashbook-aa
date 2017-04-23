@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
 import { IsMobileService } from "../../services/ismobile.service";
-
+// import { FileReaderService } from '../../services/file-reader.service';
 
 @Component({
   selector: 'sb-header',
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
 
   constructor(private router: Router,
+    // private fileReader: FileReaderService,
     private pp: PassUploadedDataService,
     private ismobileService: IsMobileService) {
   }
@@ -27,6 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onFileUpload(event) {
+    // this.fileReader.onFileUpload(event);
     let inputElem = event.currentTarget;
     if (inputElem.files && inputElem.files[0]) {
 

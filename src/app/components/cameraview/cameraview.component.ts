@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StorageService } from "./../../services/storage.service";
 import { GlobalConfig } from './../../services/globalConfig.service';
 import { PassUploadedDataService } from '../../services/pass-uploaded-data.service';
+// import { FileReaderService } from '../../services/file-reader.service';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class CameraviewComponent implements OnInit {
 
   constructor(private StorageService: StorageService,
     private router: Router,
+    // private fileReader: FileReaderService,
     private globalConfig: GlobalConfig,
     private pp: PassUploadedDataService) {
     router.events.subscribe((val) => {
@@ -112,18 +114,27 @@ export class CameraviewComponent implements OnInit {
 
     this.activeViewContainer = "cameraStage";
   }
-  onFileUpload(event) {
-    let inputElem = event.currentTarget;
-    if (inputElem.files && inputElem.files[0]) {
 
-      let reader = new FileReader();
-      reader.onload = (e) => {
-        this.pp.setData({"previewImage":reader.result, "action": "upload"});
-        inputElem.value = null;
-        this.router.navigate(['/upload']);
-      }
-      reader.readAsDataURL(inputElem.files[0]);
-    }
+  onFileUpload(event) {
+    // this.fileReader.onFileUpload(event);
+    // let inputElem = event.currentTarget;
+    // if (inputElem.files && inputElem.files[0]) {
+
+    //   let reader = new FileReader();
+    //   reader.onload = (e) => {
+    //     let mimeType = reader.result.split(",")[0].split(":")[1].split(";")[0];
+    //     let isMimeAccepted = !!mimeType.match("image/*");
+    //     if(isMimeAccepted){
+    //       this.pp.setData({ "previewImage": reader.result, "action": "upload" });
+    //       inputElem.value = null;
+    //       this.router.navigate(['/upload']);
+    //     }
+    //     else{
+    //       this.router.navigate(['/uploaderror']);
+    //     }
+    //   }
+    //   reader.readAsDataURL(inputElem.files[0]);
+    // }
   }
 
 }

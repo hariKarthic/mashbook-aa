@@ -1,9 +1,11 @@
-<header *ngIf="showHeader===true"></header>
-<!--<sb-page-loader></sb-page-loader>-->
-<header *ngIf="!isLanding">
-
+<header *ngIf="showHeader===true">
   <sb-header></sb-header>
 </header>
+
+<div *ngIf="showLoader===true" class="spinner" #spinnerElement style="opacity: 1;">
+  <sb-page-loader></sb-page-loader>
+</div>
+
 <main>
   <router-outlet></router-outlet>
 </main>

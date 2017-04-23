@@ -12,8 +12,7 @@ import {GlobalConfig} from './services/globalConfig.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'sb works!';
-  public isLanding:boolean = false;
+  showHeader: boolean = true;
 
   constructor(
     private PushNotificationService: PushNotificationService,
@@ -33,8 +32,15 @@ export class AppComponent implements OnInit {
         const showHeader = !(this.router.url.includes('/camera') || this.router.url.includes('/landing'));
         this.globalConfig.emitDisplayHeaderEvent(showHeader);
     });
-  }
 
+    this.subscibeToHeaderEvents();
+
+  }
+  subscibeToHeaderEvents(){
+    this.globalConfig.getDisplayHeaderEmitter().subscribe(flag => {
+      this.showHeader = flag;
+    });
+  }
 
 
 }

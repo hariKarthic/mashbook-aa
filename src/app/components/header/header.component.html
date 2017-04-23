@@ -1,7 +1,7 @@
-  <md-toolbar color="accent" class="sb-header">
-    <span>scrapbook</span>
-    <span class="sb-header__spacer"></span>
-    <ng-container *ngIf="!isMobile">
+<md-toolbar color="accent" class="sb-header">
+  <span>scrapbook</span>
+  <span class="sb-header_spacer"></span>
+  <ng-container *ngIf="!isMobile">
 
     <span class="sb-header__icon">
       <a md-icon-button routerLink="/gallery">
@@ -19,26 +19,26 @@
       <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader"
              (change)="onFileUpload($event)" #uploadPhoto>
   </span>
-    </ng-container>
-  </md-toolbar>
-
-  <ng-container *ngIf="isMobile">
-    <section>
-      <md-toolbar color="accent" layout-align="center center" class="sb-footer m-mobile">
-        <a md-icon-button routerLink="/gallery">
-          <md-icon color="primary" class="sb-header__icon">photo_library</md-icon>
-        </a>
-        <a md-icon-button routerLink="/camera">
-          <md-icon color="primary" class="sb-header__icon">photo_camera</md-icon>
-        </a>
-        <label md-icon-button for="uploadPhotoHeader" class="mat-icon-button">
-          <span class="mat-button-wrapper"><md-icon color="primary" class="sb-header__icon">file_upload</md-icon></span>
-        </label>
-        <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader"
-               (change)="onFileUpload($event)">
-
-      </md-toolbar>
-    </section>
   </ng-container>
+</md-toolbar>
+
+<ng-container *ngIf="isMobile">
+  <section>
+    <md-toolbar color="primary" layout-align="center center" class="sb-footer m-mobile" style="justify-content: center">
+      <a md-icon-button routerLink="/gallery">
+        <md-icon color="accent" class="sb-header__icon">photo_library</md-icon>
+      </a>
+      <a md-icon-button routerLink="/camera">
+        <md-icon color="accent" class="sb-header__icon">photo_camera</md-icon>
+      </a>
+      <label md-icon-button for="uploadPhotoHeader" class="mat-icon-button">
+        <span class="mat-button-wrapper"><md-icon color="accent" class="sb-header__icon">file_upload</md-icon></span>
+      </label>
+      <input class="hidden" name="uploadPhotoHeader" type="file" accept="image/*" capture id="uploadPhotoHeader"
+             (change)="onFileUpload($event)">
+
+    </md-toolbar>
+  </section>
+</ng-container>
 
 

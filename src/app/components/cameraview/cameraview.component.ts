@@ -28,12 +28,10 @@ export class CameraviewComponent implements OnInit {
   videoTracks: any;
   activeViewContainer: String = "cameraStage";
 
-  constructor(
-    private StorageService: StorageService,
-    private router: Router,
-    private globalConfig:GlobalConfig,
-    private pp:PassUploadedDataService,
-  ) {
+  constructor(private StorageService: StorageService,
+              private router: Router,
+              private globalConfig: GlobalConfig,
+              private pp: PassUploadedDataService) {
     router.events.subscribe((val) => {
       console.log(val);
       this.stopCapture();
@@ -41,7 +39,7 @@ export class CameraviewComponent implements OnInit {
   }
 
   ngOnInit() {
-     
+
   }
 
   changeFilter(filter) {
@@ -86,7 +84,7 @@ export class CameraviewComponent implements OnInit {
 
     this.capturedImage = this.convertCanvasToImage(snapshotCanvas);
     this.stopCapture();
-    this.pp.setData({"previewImage":this.capturedImage, "action": "camera"});
+    this.pp.setData({"previewImage": this.capturedImage, "action": "camera"});
     this.router.navigate(['/upload']);
     this.globalConfig.emitDisplayHeaderEvent(true);
   }

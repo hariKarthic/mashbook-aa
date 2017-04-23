@@ -32,7 +32,7 @@ function scheduleNotification() {
 
   console.log('Scheduling called');
 
-  jobId = schedule.scheduleJob("0 */2 * * * *", function () {
+  jobId = schedule.scheduleJob("0 */30 * * * *", function () {
     console.log('Scheduling running');
     notifications.publish(server_key);
   });

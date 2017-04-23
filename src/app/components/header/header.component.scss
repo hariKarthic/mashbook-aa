@@ -1,12 +1,22 @@
-.sb-header{
-  margin-bottom:10px;
+.sb-header {
+  margin-bottom: 10px;
 }
 
-.sb-header__spacer{
-  flex:1 1 auto;
+.sb-header__spacer {
+  flex: 1 1 auto;
 
 }
 
-.sb-header__icon{
-  padding:0 15px;
+.sb-header__icon {
+  padding: 0 15px;
+}
+
+.sb-footer {
+  position: fixed;
+  background-color: #fff;
+  color: #000;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+
 }

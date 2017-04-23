@@ -8,9 +8,6 @@
           </figure>
           <div class="filtersPreviewContainer">
             <div id="filtersPreview">
-              <figure *ngFor="let c of cssFilters" ngClass="filters-pane mirrorPhoto {{c}}" (click)="changeFilter(c)">
-                <img [src]="imageInfo.previewImage" alt="filterimage">
-
                 <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
                   <img [src]="blobUrl" alt="filterimage">
                   <figcaption class="filter-name">{{c}}</figcaption>

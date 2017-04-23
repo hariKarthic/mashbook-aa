@@ -1,0 +1,42 @@
+.sb-notification-banner {
+    background-color: #423636;
+    position: fixed;
+    float: left;
+    padding: 1em;
+    color: #FFF;
+    font-style: italic;
+    text-align: center;
+    font-family: monospace;
+    height: 4em;
+    margin: auto;
+    z-index: 3;
+    width: 100%;
+    span, a{
+        vertical-align: middle;
+    }
+}
+
+.show-toaster {
+    display: block;   
+}
+
+.hide-toaster {
+    display: none;   
+}
+.sb-notification-link, .sb-notification-close {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.sb-notification-link {
+    color: #FFF;
+    text-decoration-line: underline;
+}
+
+.sb-notification-close {
+    padding: 0.5em;
+    color: #FFF;
+    float: right;
+}

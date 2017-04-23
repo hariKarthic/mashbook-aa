@@ -42,8 +42,8 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
       if(resp && resp.length>0){
         this.cards = resp;
         this.loadMasonry();
+        }
         this.isLoading = false;
-      }
     }, (err)=> {
       console.log(err)
     });

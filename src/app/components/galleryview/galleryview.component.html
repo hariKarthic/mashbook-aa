@@ -1,3 +1,4 @@
+<sb-toaster></sb-toaster>
 <div class="container-fluid sb-gallery m-xs">
   <ng-container *ngIf="!isLoading">
     <ng-container *ngIf="cards?.length>0">
@@ -6,17 +7,17 @@
         <sb-photoitem *ngFor="let card of cards;let i=index" [card]="card"></sb-photoitem>
       </div>
     </ng-container>
-    <ng-container *ngIf="cards?.length==0">
+    <ng-container *ngIf="!cards||cards.length == 0">
       <div class="row">
         <div class="col-xs-12">
           <h1>
             <md-icon>sentiment_dissatisfied</md-icon>
             <span>There are no memories</span>
           </h1>
-          <button md-raised-button routerLink="/camera">
+          <button color="accent" md-raised-button routerLink="/camera">
             Camera
           </button>
-          <button md-raised-button routerLink="/gallery">
+          <button color="accent" md-raised-button routerLink="/gallery">
             Upload
           </button>
         </div>

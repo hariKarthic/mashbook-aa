@@ -1,4 +1,5 @@
-<div class="marginTopBottom-20">
+
+<div class="container-fluid sb-gallery m-xs">
   <ng-container *ngIf="cards?.length>0;else noPhotos">
     <div class="sb-gallery_grid" #grid>
       <div class="sb-gallery_sizer"></div>
@@ -6,21 +7,24 @@
     </div>
   </ng-container>
 
-  <ng-template #noPhotos>
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>
-          <md-icon>sentiment_dissatisfied</md-icon>
-          Some message to show there is no photos
-        </h1>
-        <button md-raised-button routerLink="/camera">
-          Camera
-        </button>
-        <button md-raised-button routerLink="/gallery">
-          Upload
-        </button>
+
+    <ng-container *ngIf="cards?.length==0">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>
+            <md-icon>sentiment_dissatisfied</md-icon>
+            Some message to show there is no photos
+          </h1>
+          <button md-raised-button routerLink="/camera">
+            Camera
+          </button>
+          <button md-raised-button routerLink="/gallery">
+            Upload
+          </button>
+        </div>
       </div>
-    </div>
-  </ng-template>
+    </ng-container>
+
+
 </div>
 

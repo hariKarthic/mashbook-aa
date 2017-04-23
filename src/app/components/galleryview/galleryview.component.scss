@@ -17,6 +17,9 @@
   width: 32.5%;
 }
 
-.marginTopBottom-20{
-  margin: 15px 0 15px 0;
+@media (max-width: 577px) {
+  .sb-gallery.m-xs {
+    margin: 0 auto;
+    padding: 0px 5px;
+  }
 }

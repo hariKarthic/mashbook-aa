@@ -29,7 +29,6 @@ export class GalleryviewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
      this.getCards()
-     this.StorageService.deleteData("cards")
   }
 
   /**

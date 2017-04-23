@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+
+// $white-christmas-primary:mat-pallete($mat-grey,100,50,300);
+// $white-christmas-accent:mat-pallete($mat-red,600,400,700);
+
+// $white-christmas-warn:mat-pallete($mat-red);
+
+// $white-christmas-theme: mat-light-theme($white-christmas-primary, $white-christmas-accent, $white-christmas-warn);
+
+// @include angular-material-theme($white-christmas-theme);
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

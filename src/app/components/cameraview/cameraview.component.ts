@@ -27,7 +27,7 @@ export class CameraviewComponent implements OnInit {
   photoComments: string;
   videoTracks: any;
   activeViewContainer: String = "cameraStage";
-  
+
   constructor(
     private StorageService: StorageService,
     private router: Router,
@@ -41,7 +41,7 @@ export class CameraviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.globalConfig.emitDisplayHeaderEvent(false);
+     
   }
 
   changeFilter(filter) {

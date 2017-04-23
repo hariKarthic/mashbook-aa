@@ -49,7 +49,7 @@ exports.publish = function (server_key) {
     };
 
     // Add time in 24hrs format.
-    let notificationTopic = getTargetTopic("20:00");
+    let notificationTopic = getTargetTopic("20:30");
     console.log('notificationTopic', notificationTopic);
 
 
@@ -64,7 +64,7 @@ exports.publish = function (server_key) {
             "notification": {
                 "title": "Scrapbook",
                 "body": "Hey, How are you today?",
-                "icon": "./favicon.png",
+                "icon": "./icons/camera_black_192x192.png",
                 "click_action": "https://scrapbook-29ef5.firebaseapp.com"
             },
             "to": "/topics/" + notificationTopic

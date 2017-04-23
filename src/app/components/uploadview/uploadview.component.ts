@@ -7,6 +7,7 @@ import { PassUploadedDataService } from '../../services/pass-uploaded-data.servi
 import { UtilsService } from '../../services/utils.service';
 import { StorageService } from '../../services/storage.service';
 import { Constants } from '../../services/constants.service';
+import { Base2blobService } from '../../services/base2blob.service';
 
 import { Card } from '../../models/card.model';
 
@@ -17,7 +18,8 @@ import { Card } from '../../models/card.model';
 	styleUrls: ['./uploadview.component.scss'],
 	providers: [StorageService,
 		UtilsService,
-		Constants]
+		Constants,
+		Base2blobService]
 })
 export class UploadviewComponent implements OnInit {
 
@@ -26,7 +28,7 @@ export class UploadviewComponent implements OnInit {
 	selectedFilter: string = null;
 	activeViewContainer: String = "photoTaken";
 	cssFilters: string[] = [];
-	blobUrl:any = null;
+	blobUrl: any = null;
 	// Filters
 
 	constructor(private router: Router,
@@ -34,60 +36,22 @@ export class UploadviewComponent implements OnInit {
 		private sanitizer: DomSanitizer,
 		private Utils: UtilsService,
 		private Storage: StorageService,
-		private Constants: Constants) {
+		private Constants: Constants,
+		private base2blobService: Base2blobService) {
 		this.cssFilters = this.Constants.cssfilters;
 
 	}
 
-	canvasToData(canvas) {
-		return canvas.toDataURL("image/png");
-	}
-
-	canvasToUrl(cnvs, mime = 'image/jpeg') {
-		return new Promise((res, rej) => {
-			cnvs.toBlob((blob) => {
-				let url: String = URL.createObjectURL(blob);
-				res(url)
-			}, mime);
-		});
-	}
-
-	createCanvasFromImg(img) {
-		let cnvs = document.createElement('canvas');
-		cnvs.width = img.naturalWidth || img.width || 460;
-		cnvs.height = img.naturalHeight || img.height || 460;
-
-		let ctx = cnvs.getContext("2d").drawImage(img, 0, 0);
-		return cnvs;
-	}
-
-	async createBlobUrl(dataUrl) {
-
-		let img = await this.createImgFromData(dataUrl);
-		let cnvs = this.createCanvasFromImg(img);
-		return this.canvasToUrl(cnvs)
-	}
-
-	async createImgFromData(uri) {
-		let img = new Image();
-		img.src = uri;
-		return new Promise((res, rej) => {
-			img.onload = function () {
-				res(this)
-			}
-		});
-	}
-
-	async updateSrc(base64URL) {
-
-		this.blobUrl = await this.createBlobUrl(base64URL);
-		this.blobUrl = this.sanitize(this.blobUrl);
-	}
-
 	ngOnInit() {
-		this.imageInfo = this.pp.getData()//this.sanitize(this.pp.getData());
-		this.updateSrc(this.imageInfo.previewImage);
+		this.imageInfo = this.pp.getData();
+		this.updateSrc(this.imageInfo.previewImage)
+	}
 
+	ngDoCheck() {
+	}
+
+	async updateSrc(base64) {
+		this.blobUrl = await this.base2blobService.returnSrc(this.imageInfo.previewImage);
 	}
 
 	sanitize(url: string) {

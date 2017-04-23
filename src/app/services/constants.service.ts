@@ -10,6 +10,7 @@ import { Injectable, Inject } from '@angular/core';
 export class Constants {
 	cards:string = "cards";
 	cssfilters: string[] = [
+	  "original",
     "_1977",
     "aden",
     "brannan",

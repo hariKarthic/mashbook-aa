@@ -62,7 +62,7 @@ app.post("/notification/send", function (req, res) {
 
   notifications.publish(server_key, notificationTopic).then(function (response) {
 
-    console.log("[RESPONSE]: ", response);
+    console.log("called from send", server_key, notificationTopic);
 
     res.status(response.status).json({
       "statusCode": "00",

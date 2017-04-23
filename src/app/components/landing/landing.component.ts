@@ -1,14 +1,13 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
-import { fadeInAnimation } from "../../app-transition.module";
+import { fadeOutRoute } from "../../app-transition";
 
 
 @Component({
   selector: 'sb-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
-  animations: [fadeInAnimation],
-  // host: { '[@slideInDownAnimation]': '' }
+  animations: [fadeOutRoute]
 })
 export class LandingComponent implements OnInit {
 

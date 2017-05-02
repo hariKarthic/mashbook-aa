@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: "full",
-    redirectTo: "/landing"
+    redirectTo: "/gallery"
   },
   {
     path: 'landing', component: LandingComponent
@@ -29,10 +29,10 @@ const routes: Routes = [
   },
   {
     path: 'upload', component: UploadviewComponent
-  }, 
+  },
   {
     path: 'uploaderror', component: UploadErrorComponent
-  }, 
+  },
   {
     path: '**', component: Page404Component
   }

@@ -15,14 +15,77 @@
   <link href="./assets/styles/bootstrap.css" rel="stylesheet" />
   <link href="./assets/styles/cssgram.min.css" rel="stylesheet" />
 
+  <style>
+    .sb-landing {
+      width: 100vw;
+      height:100vh;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .sb-landing::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-attachment: fixed;
+      background-image: url('./assets/images/download.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: grayscale(1);
+    }
+
+    .sb-landing_polaroid {
+      position:relative;
+      margin: 0 auto;
+      width: 80vw;
+      height: 75vh;
+      border: 15px solid #fff;
+      border-bottom: 60px solid #fff;
+      box-shadow: 3px 3px 3px #777;
+      background-image: url('./assets/images/download.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #fff;
+
+    }
+
+    .sb-landing_msg {
+      text-align: center;
+      width: 50%;
+      position: relative;
+      margin: 0 auto;
+      top:-60px;
+    }
+
+    @media (min-width:576px ){
+      .sb-landing_polaroid{
+        width: 580px;
+        height: 580px;
+        margin:0 auto;
+      }
+    }
+
+  </style>
+
 </head>
 
 <body class="mat-app-background">
-  <sb-root>
     <section class="container-fluid">
-      <h1 class="text-center">Loading...</h1>
+      <div class="sb-landing">
+        <div class="sb-landing_polaroid">
+
+        </div>
+        <div class="sb-landing_msg">
+          <h3>mash.book</h3>
+        </div>
+      </div>
     </section>
-  </sb-root>
 
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {

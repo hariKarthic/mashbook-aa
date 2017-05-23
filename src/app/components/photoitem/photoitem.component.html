@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="card.type">
   <ng-container *ngSwitchCase="'img'">
     <div class="sb-gallery_item" (click)="showDetail(card.id)" ngClass="{{card.selectedFilter}}">
-      <img [src]="card.src" alt="title"/>
+      <img crossOrigin="Anonymous" [src]="card.src" alt="title" />
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="'caption'">

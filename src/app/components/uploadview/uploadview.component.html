@@ -5,13 +5,13 @@
         <div class="pj-camera-picture-wrap">
           <div class="captured-image-container">
             <figure #capturedImageContainer class="{{selectedFilter}}">
-              <img [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
+              <img crossOrigin="Anonymous" [src]="blobUrl" alt="filterimage" class="camera-skin-snapshot">
             </figure>
           </div>
           <div class="filtersPreviewContainer">
             <div id="filtersPreview">
               <figure *ngFor="let c of cssFilters" class="filters-pane {{c}}" (click)="changeFilter(c)">
-                <img [src]="blobUrl" alt="filterimage">
+                <img crossOrigin="Anonymous" [src]="blobUrl" alt="filterimage">
                 <figcaption class="filter-name">{{c}}</figcaption>
               </figure>
             </div>
